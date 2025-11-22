@@ -1,0 +1,25 @@
+import ImageGallery from "react-image-gallery";
+
+import bread from "../IMAGES/bread.jpeg";
+import brownies from "../IMAGES/brownies.jpeg";
+import redVelvetCupcakes from "../IMAGES/RedVelvetCupcakes.jpg";
+
+const images = [
+  {
+    original: bread,
+    thumbnail: bread,
+  },
+  {
+    original: brownies,
+    thumbnail: brownies,
+  },
+  {
+    original: redVelvetCupcakes,
+    thumbnail: redVelvetCupcakes,
+  },
+];
+
+function Gallery() {
+  return <ImageGallery items={images} />;
+}
+export default Gallery;
