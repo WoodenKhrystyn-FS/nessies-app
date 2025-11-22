@@ -2,6 +2,9 @@ import React from "react";
 import Button from "../Components/Button";
 
 function Contact() {
+  console.log("Contact page loaded");
+  //alert("Contact page loaded");
+
   return (
     <div className="contact-container">
       <h2>Contact Us</h2>
@@ -9,12 +12,19 @@ function Contact() {
         If you have any questions pertaining to an order or goodie, feel free to
         reach out!
       </p>
-      <input type="text" placeholder="Type Name" />
-      <br />
-      <input type="email" placeholder="Type Email" />
-      <br />
+      <form>
+        <label>Name:</label>
+        <input type="text" placeholder="Type Name" />
+        <br />
+        <label>Email:</label>
+        <input type="email" placeholder="Type Email" />
+        <br />
 
-      <textarea placeholder="Type xMessage"></textarea>
+        <label>Message:</label>
+        <textarea placeholder="Type Message"></textarea>
+        <br></br>
+      </form>
+
       <br></br>
       <Button />
     </div>

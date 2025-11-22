@@ -3,16 +3,16 @@ import ImageGallery from "react-image-gallery";
 
 const images = [
   {
-    original: "/Images/bread.jpeg",
-    thumbnail: "/Images/bread.jpeg",
+    original: "/IMAGES/bread.jpeg",
+    thumbnail: "/IMAGES/bread.jpeg",
   },
   {
-    original: "/Images/brownies.jpeg",
-    thumbnail: "/Images/brownies.jpeg",
+    original: "/IMAGES/brownies.jpeg",
+    thumbnail: "/IMAGES/brownies.jpeg",
   },
   {
-    original: "/Images/RedVelvetCupcakes.jpg",
-    thumbnail: "/Images/RedVelvetCupcakes.jpg",
+    original: "/IMAGES/RedVelvetCupcakes.jpg",
+    thumbnail: "/IMAGES/RedVelvetCupcakes.jpg",
   },
 ];
 
