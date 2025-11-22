@@ -39,7 +39,7 @@ const appStyles = {
   AppWithPadding: {
     textAlign: "center",
     backgroundColor: "white",
-    paddingBottom: "50px", // Adjust this value to match the footer's height
+    paddingBottom: "60px", // Adjust this value to match the footer's height
   },
   Header: {
     backgroundColor: "black",

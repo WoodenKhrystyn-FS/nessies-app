@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <div className="navbar" style={navbarStyles.navbar}>
-      <div className="links" style={navbarStyles.ul}>
+      <div className="links" style={navbarStyles.links}>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/menu">Menu</Link>
@@ -28,5 +28,8 @@ const navbarStyles = {
     margin: 5,
     padding: 10,
     overflow: "hidden",
+    display: "flex",
+    gap: "25px",
+    justifyConent: "center",
   },
 };
