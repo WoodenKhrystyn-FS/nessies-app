@@ -22,6 +22,12 @@ const images = [
 ];
 
 function Gallery() {
-  return <ImageGallery items={images} />;
+  return (
+    <ImageGallery
+      items={images}
+      showFullscreenButton={true}
+      showPlayButton={true}
+    />
+  );
 }
 export default Gallery;
