@@ -1,5 +1,5 @@
 import React from "react";
-//import Owner from "../IMAGES/owner.jpg";
+import owner from "../IMAGES/owner.jpg";
 
 function About() {
   return (
@@ -13,9 +13,6 @@ function About() {
         then, Nessie's Bakery has been a staple in the local community, known
         for its delicious cupcakes, cookies, cakes, and more.
       </p>
-      {/* <img>
-        src= alt="Lillian V. Tender, Owner of Nessie's Bakery" 
-      </img> */}
       <p>
         At Nessie's Bakery, we believe in using only the finest ingredients to
         create our delectable treats. From classic flavors to unique and
@@ -27,6 +24,14 @@ function About() {
         Thank you for choosing Nessie's Bakery, where every bite is a taste of
         happiness!
       </p>
+
+      <div>
+        <img
+          src={owner}
+          alt="Lillian V. Tender, Owner of Nessie's Bakery"
+          style={{ width: "300px", height: "400px", borderRadius: "10px" }}
+        />
+      </div>
     </div>
   );
 }
