@@ -1,6 +1,7 @@
 import React from "react";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+import "../App.css";
 
 import bread from "../IMAGES/bread.jpeg";
 import brownies from "../IMAGES/brownies.jpeg";
@@ -41,7 +42,10 @@ export default Gallery;
 
 const galleryStyles = {
   galleryContainer: {
-    maxWidth: "500px",
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "20px",
+    maxWidth: "400px",
     margin: "0 auto",
   },
 };

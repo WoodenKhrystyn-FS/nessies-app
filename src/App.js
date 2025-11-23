@@ -6,11 +6,13 @@ import Menu from "./Pages/Menu";
 import Contact from "./Pages/Contact";
 import { Routes, Route } from "react-router-dom";
 
+import "./App.css";
+
 function App() {
   return (
     <div className="App" style={appStyles.AppWithPadding}>
       <header className="Header" style={appStyles.Header}>
-        <p>Local Indy Bakery with Delicious Goodies</p>
+        <p>Local Orders and Delivery witin 7 miles </p>
       </header>
 
       <Navbar />
@@ -23,7 +25,7 @@ function App() {
       </Routes>
 
       <footer className="footer" style={appStyles.footer}>
-        <p style={appStyles.p}>© 2025 Nessie's Bakery. All rights reserved.</p>
+        <p style={appStyles.p}>© 2025 3 Lil Ladies Baked Goods. All rights reserved.</p>
       </footer>
     </div>
   );
@@ -34,11 +36,10 @@ export default App;
 const appStyles = {
   App: {
     textAlign: "center",
-    backgroundColor: "white",
+    backgroundColor: "#9d75cb",
   },
   AppWithPadding: {
     textAlign: "center",
-    backgroundColor: "white",
     paddingBottom: "60px", // Adjust this value to match the footer's height
   },
   Header: {

@@ -23,6 +23,7 @@ const MenuForm = () => {
           <option>Chocolate</option>
           <option>Red Velvet</option>
           <option>Lemon</option>
+          <option>Carrot</option>
         </select>
       </div>
       <div className="frosting">
@@ -33,6 +34,7 @@ const MenuForm = () => {
           <option>Chocolate Ganache</option>
           <option>Cream Cheese</option>
           <option>Lemon Glaze</option>
+          <option>Strawberry Frosting</option>
         </select>
       </div>
       <div className="size">
