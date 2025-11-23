@@ -5,6 +5,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import bread from "../IMAGES/bread.jpeg";
 import brownies from "../IMAGES/brownies.jpeg";
 import redVelvetCupcakes from "../IMAGES/RedVelvetCupcakes.jpg";
+import chocolateChipCookies from "../IMAGES/ChocolateChipCookies.webp";
 
 const images = [
   {
@@ -19,6 +20,10 @@ const images = [
     original: redVelvetCupcakes,
     thumbnail: redVelvetCupcakes,
   },
+  {
+    original: chocolateChipCookies,
+    thumbnail: chocolateChipCookies,
+  }
 ];
 
 function Gallery() {
