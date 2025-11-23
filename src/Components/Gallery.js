@@ -23,16 +23,25 @@ const images = [
   {
     original: chocolateChipCookies,
     thumbnail: chocolateChipCookies,
-  }
+  },
 ];
 
 function Gallery() {
   return (
-    <ImageGallery
-      items={images}
-      showFullscreenButton={true}
-      showPlayButton={true}
-    />
+    <div className="galleryContainer" style={galleryStyles.galleryContainer}>
+      <ImageGallery
+        items={images}
+        showFullscreenButton={true}
+        showPlayButton={true}
+      />
+    </div>
   );
 }
 export default Gallery;
+
+const galleryStyles = {
+  galleryContainer: {
+    maxWidth: "500px",
+    margin: "0 auto",
+  },
+};
