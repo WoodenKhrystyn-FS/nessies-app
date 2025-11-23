@@ -5,9 +5,7 @@ function Home() {
   return (
     <div className="home-container">
       <h1 className="welcome-message" style={homeStyles.welcomeMessage}>Welcome to Nessie's Bakery</h1>
-       <div>
-        <ImageGallery className="gallery" items={images} style={homeStyles.gallery} />
-      </div>
+      
     </div>
   );
 }
