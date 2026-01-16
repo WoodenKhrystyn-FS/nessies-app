@@ -4,7 +4,7 @@ const goodiesRoutes = require("./routes/goodies");
 const app = express();
 const PORT = 5000;
 
-//Middleware to parse JSON
+//Middleware
 app.use(express.json());
 app.use(cors());
 
