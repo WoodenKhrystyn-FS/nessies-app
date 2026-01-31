@@ -1,5 +1,19 @@
-//Mock database (in-memory):
+//Mock goodies data:
+//Import Goodies model
+const Goodies = require("../models/goodiesModel");
+
+//Create an array to hold goodies data:
 let goodies = [];
+
+//CRUD ops for goodies
+// let goodies = [
+//   { id: 1, name: "Chocolate Chip Cookies", price: 1.5 },
+//   { id: 2, name: "Red Velvet Cupcakes", price: 2.0 },
+//   { id: 3, name: "Brownies", price: 2.5 },
+//   { id: 4, name: "Vanilla Cake", price: 15.0 },
+//   { id: 5, name: "Macadamia Nut Cookies", price: 1.75 },
+
+// ];
 
 //Get all goodies:
 exports.getAll = (req, res) => {
@@ -20,11 +34,22 @@ exports.getGoodie = (req, res) => {
 
 //Create new goodie:
 exports.createGoodie = (req, res) => {
-  const newGoodie = {
+  const { name, price, description, category, available } = req.body;
+
+  if (!name || !price || !description || !category) {
+    return res
+      .status(400)
+      .json({ message: "Name, price, description, and category are required" });
+  }
+
+  const newGoodie = new Goodies({
     id: goodies.length + 1,
-    name: req.body.name,
-    price: req.body.price,
-  };
+    name,
+    price,
+    description,
+    category,
+    available: available !== undefined ? available : true,
+  });
 
   goodies.push(newGoodie);
   res.status(200).json({ message: "New goodies created" });
@@ -96,11 +121,10 @@ exports.updateGoodie = (req, res) => {
     price: req.body.price,
   };
 
-  res
-    .status(200)
-    .json({ 
-      message: "Goodie was updated", 
-      goodie: goodies[index] });
+  res.status(200).json({
+    message: "Goodie was updated",
+    goodie: goodies[index],
+  });
 };
 
 //Delete goodies by Id:

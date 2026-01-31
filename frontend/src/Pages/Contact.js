@@ -9,8 +9,8 @@ function Contact() {
     <div className="contact-container">
       <h2>Contact Us</h2>
       <p>
-        If you have any questions pertaining to an order or goodie, feel free to
-        reach out!
+        We want to hear from you! Have questions about an order or menu item,
+        fill out the form below and allow response within 24 hours.
       </p>
       <form>
         <label>Name:</label>
@@ -29,7 +29,10 @@ function Contact() {
       </form>
 
       <br></br>
-      <Button />
+      <button type="submit" name="contact-btn">
+        Submit
+        <Button />
+      </button>
     </div>
   );
 }

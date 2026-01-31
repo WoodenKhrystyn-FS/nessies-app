@@ -13,9 +13,9 @@ function Navbar() {
       />
       <div className="links" style={navbarStyles.links}>
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/menu">Menu</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/about">About Us</Link>
+        <Link to="/menu">Order Goodies</Link>
+        <Link to="/contact">Contact Us</Link>
       </div>
     </div>
   );

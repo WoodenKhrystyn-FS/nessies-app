@@ -32,6 +32,10 @@ function About() {
           style={{ width: "300px", height: "400px", borderRadius: "10px" }}
         />
       </div>
+      <br/>
+      <p>
+        Lillian V. Tender, Owner of Three Little Ladies Bakery
+      </p>
     </div>
   );
 }

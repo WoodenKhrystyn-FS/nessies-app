@@ -54,7 +54,8 @@ const appStyles = {
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "#f5f3ff",
+    backgroundColor: "#9D75CB",
+    opacity: "0.80",
     fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
   },
   Header: {
