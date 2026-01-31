@@ -4,7 +4,7 @@ import Gallery from "../Components/Gallery";
 function Home() {
   return (
     <div className="home-container">
-      <h1 className="welcome-message" style={homeStyles.welcomeMessage}> 3 Lil Ladies Baked Goods</h1>
+      <h1 className="welcome-message" style={homeStyles.welcomeMessage}> Three Little Ladies Bakery</h1>
       <Gallery/>
     </div>
   );

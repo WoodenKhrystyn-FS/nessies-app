@@ -5,7 +5,7 @@ function Button() {
   };
   handleClick();
 
-  return <button onClick={handleClick}>Submit</button>;
+  return <button onClick={handleClick}>Button</button>;
 }
 
 export default Button;

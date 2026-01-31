@@ -14,7 +14,10 @@ function Contact() {
       </p>
       <form>
         <label>Name:</label>
-        <input type="text" placeholder="Type Name" />
+        <input type="text" placeholder="Type First Name" />
+        <br />
+        <label>Surname:</label>
+        <input type="text" placeholder="Type Surname" />
         <br />
         <label>Email:</label>
         <input type="email" placeholder="Type Email" />

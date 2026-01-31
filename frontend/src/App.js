@@ -2,9 +2,10 @@ import React from "react";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
-import Menu from "./Pages/Menu";
+import OrderGoodie from "./Pages/OrderGoodie";
 import Contact from "./Pages/Contact";
 import { Routes, Route } from "react-router-dom";
+import Footer from "./Components/Footer";
 
 import "./App.css";
 import { useEffect, useState } from "react";
@@ -19,7 +20,7 @@ function App() {
   }, []);
   return (
     <div style={appStyles.AppWithPadding}>
-      <header style={appStyles.Header}>3 Lil Ladies Baked Goods</header>
+      <header style={appStyles.Header}>Three Little Ladies Bakery</header>
       {backendMessage && (
         <div style={appStyles.backendMessage}>{backendMessage}</div>
       )}
@@ -30,16 +31,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/menu" element={<Menu />} />
+          <Route path="/order-goodie" element={<OrderGoodies />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
 
-      <footer className="footer" style={appStyles.footer}>
-        <p style={appStyles.p}>
-          © 2025 3 Lil Ladies Baked Goods. All rights reserved.
-        </p>
-      </footer>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }
@@ -86,13 +85,5 @@ const appStyles = {
     maxWidth: "1200px",
     margin: "0 auto",
     padding: "1.6rem",
-  },
-
-  footer: {
-    backgroundColor: "#111827",
-    color: "#9ca3af",
-    padding: "10px",
-    textAlign: "center",
-    fontSize: ".87rem",
   },
 };
