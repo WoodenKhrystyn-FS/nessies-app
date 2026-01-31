@@ -9,6 +9,13 @@ function GoodieCard({ id, name, price, image }) {
         <img src={image} alt={name} style={cardStyles.image} />
         <h3>{name}</h3>
         <p style={cardStyles.price}>Price: ${price.toFixed(2)}</p>
+
+        {/* Additional details added here */}
+        <p style={cardStyles.description}>{description}</p>
+        <p style={cardStyles.category}>Category: {category}</p>
+        <p style={cardStyles.availability}>
+          {available ? "Available" : "Out of Stock"}
+        </p>
       </div>
       <Button text="Checkout Goodies" />
       <Button text="Add to Cart" />
@@ -25,9 +32,20 @@ const cardStyles = {
   },
   image: {
     width: "200px",
-    height: "200px",
+    height: "180px",
   },
   price: {
     fontWeight: "bold",
+  },
+  description: {
+    fontStyle: "italic",
+  },
+  category: {
+    textTransform: "uppercase",
+    color: "#555",
+  },
+  availability: {
+    fontWeight: "bold",
+    color: "green",
   },
 };

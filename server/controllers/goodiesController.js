@@ -1,11 +1,12 @@
 //Mock goodies data:
-//Import Goodies model
-const Goodies = require("../models/goodiesModel");
+
+// const Goodies = require("../models/goodiesModel");
 
 //Create an array to hold goodies data:
 let goodies = [];
 
 //CRUD ops for goodies
+
 // let goodies = [
 //   { id: 1, name: "Chocolate Chip Cookies", price: 1.5 },
 //   { id: 2, name: "Red Velvet Cupcakes", price: 2.0 },
@@ -28,7 +29,7 @@ exports.getGoodie = (req, res) => {
   if (goodie) {
     res.status(200).json(goodie);
   } else {
-    res.status(404).json({ message: "No goodie was found" });
+    res.status(404).json({ message: "Goodie Not Found" });
   }
 };
 
@@ -52,7 +53,7 @@ exports.createGoodie = (req, res) => {
   });
 
   goodies.push(newGoodie);
-  res.status(200).json({ message: "New goodies created" });
+  res.status(200).json({ message: "Goodie created", goodie: newGoodie });
 };
 
 //Update goodies by Id::
@@ -61,7 +62,7 @@ exports.updateGoodie = (req, res) => {
   const index = goodies.findIndex((g) => g.id === id);
 
   if (index === -1) {
-    res.status(404).json({ message: "No goodie was updated" });
+    res.status(404).json({ message: "Goodie Not Found" });
   }
 
   goodies[index] = {
@@ -86,7 +87,7 @@ exports.getGoodie = (req, res) => {
   if (goodie) {
     res.status(200).json(goodie);
   } else {
-    res.status(404).json({ message: "No goodie was found" });
+    res.status(404).json({ message: "Goodie Not Found" });
   }
 };
 
@@ -101,7 +102,7 @@ exports.createGoodie = (req, res) => {
   goodies.push(newGoodie);
 
   res.status(200).json({
-    message: "New goodie created",
+    message: "New Goodie Created",
     goodie: newGoodie,
   });
 };
@@ -112,7 +113,7 @@ exports.updateGoodie = (req, res) => {
   const index = goodies.findIndex((g) => g.id === id);
 
   if (index === -1) {
-    res.status(404).json({ message: "No goodie was updated" });
+    res.status(404).json({ message: "Goodie Not Found" });
   }
 
   goodies[index] = {
@@ -122,7 +123,7 @@ exports.updateGoodie = (req, res) => {
   };
 
   res.status(200).json({
-    message: "Goodie was updated",
+    message: "Goodie Updated",
     goodie: goodies[index],
   });
 };
@@ -133,11 +134,9 @@ exports.deleteGoodie = (req, res) => {
   const index = goodies.findIndex((g) => g.id === id);
 
   if (index === -1) {
-    return res.status(404).json({ message: "Goodie was not deleted" });
+    return res.status(404).json({ message: "Goodie Not Removed" });
   }
 
   const deletedGoodie = goodies.splice(index, 1)[0];
-  res
-    .status(200)
-    .json({ message: "Goodie has been deleted", goodie: deletedGoodie });
+  res.status(200).json({ message: "Goodie Removed", goodie: deletedGoodie });
 };
