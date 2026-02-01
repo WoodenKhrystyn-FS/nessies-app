@@ -5,11 +5,15 @@ This application will help add professional value and cater to more locals and c
 
 ## Project Status:
 
-Currently in the early development stages of working the frontend. Building components and pages with proper functionality and responsiveness.
+Early development stages of working the frontend. Building components and pages with proper functionality and responsiveness.
 
-##  Project Visual Updates (Screen Shots)
 
-Three Little Ladies Bakery
+
+##  Project Visual Updates 
+
+Three Little Ladies Bakery 
+Figma prototype
+[https://www.figma.com/design/OReEdVoS8wX3GVNBtSlDqg/WireframeBaker?node-id=0-1&t=Gje0O1z3bXmiko3g-1]
 
 ## Project Install & Setup
 

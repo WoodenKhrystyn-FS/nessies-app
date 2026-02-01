@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #9d75cb;
+  background-color: #f5f3ff;
 }
 .App-header {
   background-color: #282c34;
@@ -36,7 +36,7 @@
   margin: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}                     
+}
 .Gallery-image:hover {
   transform: scale(1.05);
   transition: transform 0.3s;
@@ -56,5 +56,3 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-  
-
