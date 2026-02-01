@@ -28,11 +28,9 @@ function Contact() {
         <br></br>
       </form>
 
-      <br></br>
-      <button type="submit" name="contact-btn">
-        Submit
-        <Button />
-      </button>
+      
+     
+        <Button onClick={() => alert("Contact form submitted!")} text="Submit Contact Form" />
     </div>
   );
 }
