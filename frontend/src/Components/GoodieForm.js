@@ -1,9 +1,10 @@
 import React from "react";
 import Button from "./Button";
 
-const MenuForm = () => {
+const GoodieForm = () => {
   return (
     <div>
+      <h2>Create A Goodie</h2>
       <div className="treat">
         <select>
           Treat Type:
@@ -39,7 +40,7 @@ const MenuForm = () => {
       </div>
       <div className="size">
         <select>
-          Size:
+          Cake Size:
           <option>--Choose a Size--</option>
           <option>6 inch</option>
           <option>8 inch</option>
@@ -47,10 +48,30 @@ const MenuForm = () => {
           <option>12 inch</option>
         </select>
       </div>
-      <br></br>
-      <Button />
+      <div>
+        <label>Special Instructions:</label>
+        <br />
+        <textarea
+          rows="4"
+          cols="50"
+          placeholder="Enter any special instructions here..."
+        ></textarea>
+      </div>
+      <div>
+        <label>Quantity:</label>
+        <input type="number" min="1" max="100" defaultValue="1" />
+      </div>
+      <div>
+        <label>Pickup Date:</label>
+        <input type="date" />
+      </div>
+
+      <Button
+        onClick={() => alert("Goodie form submitted!")}
+        text="Bake Goodie"
+      />
     </div>
   );
 };
 
-export default MenuForm;
+export default GoodieForm;

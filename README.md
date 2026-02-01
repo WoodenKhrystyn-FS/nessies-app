@@ -1,6 +1,6 @@
 # React Web App - Three Little Ladies Bakery (portfolio project)
 
-This is a mock bakery website for a local baker of my hometown (Indiana). 
+Mock bakery website for a local baker of my hometown (Indiana). 
 This application will help add professional value and cater to more locals and community vendor events
 
 ## Project Status:

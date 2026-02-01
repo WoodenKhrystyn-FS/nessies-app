@@ -1,5 +1,7 @@
 import React from "react";
 import image from "../IMAGES/brownies.jpeg";
+import { useNavigate } from "react-router-dom";
+import GoodieForm from "./GoodieForm";
 import Button from "./Button";
 
 function GoodieCard({ id, name, price, image }) {
@@ -17,8 +19,10 @@ function GoodieCard({ id, name, price, image }) {
           {available ? "Available" : "Out of Stock"}
         </p>
       </div>
-      <Button text="Checkout Goodies" onClick={() => navigate("/checkout")} />
+      <Button text="Create goodie" onClick={() => navigate(`/goodies/${id}/create`)} />
+      <Button text="Checkout Goodies" onClick={() => navigate(`${GoodieForm}`)} />
       <Button text="Add to Cart" onClick={() => navigate("/cart")} />
+      <Button text="View Details" onClick={() => navigate(`/goodies/${id}`)} />
     </div>
   );
 }
