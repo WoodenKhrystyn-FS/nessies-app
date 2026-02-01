@@ -7,18 +7,18 @@ function GoodieCard({ id, name, price, image }) {
     <div>
       <div key={id} className="goodie-card" style={cardStyles.GoodieCard}>
         <img src={image} alt={name} style={cardStyles.image} />
-        <h3>{name}</h3>
-        <p style={cardStyles.price}>Price: ${price.toFixed(2)}</p>
-
-        {/* Additional details added here */}
-        <p style={cardStyles.description}>{description}</p>
+        <div>
+          <h3>{name}</h3>
+          <p style={cardStyles.price}>Price: ${price.toFixed(2)}</p>
+          <p style={cardStyles.description}>{description}</p>
+        </div>
         <p style={cardStyles.category}>Category: {category}</p>
         <p style={cardStyles.availability}>
           {available ? "Available" : "Out of Stock"}
         </p>
       </div>
-      <Button text="Checkout Goodies" />
-      <Button text="Add to Cart" />
+      <Button text="Checkout Goodies" onClick={() => navigate("/checkout")} />
+      <Button text="Add to Cart" onClick={() => navigate("/cart")} />
     </div>
   );
 }

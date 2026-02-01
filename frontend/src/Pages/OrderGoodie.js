@@ -27,7 +27,7 @@ function OrderGoodies() {
       <h2>Order Goodies</h2>
       <p>Choose from items below!</p>
 
-      <div className="goodie-grid">
+      <div className="goodie-grid" style={gridStyles.goodieGrid}>
         {goodies.map((goodie) => (
           <GoodieCard goodie={goodie} />
         ))}
@@ -38,3 +38,12 @@ function OrderGoodies() {
 }
 
 export default OrderGoodies;
+
+const gridStyles = {
+  goodieGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+    gap: "20px",
+    
+  },
+};

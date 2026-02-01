@@ -1,6 +1,6 @@
 # React Web App - Nessie's Bakery (portfolio project)
 
-This is a mock bakery website for a local baker of my hometown (Indianapolis, IN). 
+This is a mock bakery website for a local baker of my hometown (Indiana). 
 This application will help add professional value and cater to more locals and community vendor events
 
 ## Project Status:
@@ -9,7 +9,7 @@ Currently in the early development stages of working the frontend. Building comp
 
 ##  Project Visual Updates (Screen Shots)
 
-None at this time
+Three Little Ladies Bakery
 
 ## Project Install & Setup
 
