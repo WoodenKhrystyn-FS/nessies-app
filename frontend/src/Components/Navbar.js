@@ -8,13 +8,13 @@ function Navbar() {
       <img
         className="Logo"
         src={Logo}
-        alt="3 Lil Ladies Baked Goods Logo"
+        alt="Three Little Ladies Bakery Logo"
         style={navbarStyles.Logo}
       />
       <div className="links" style={navbarStyles.links}>
         <Link to="/">Home</Link>
         <Link to="/about">About Us</Link>
-        <Link to="/menu">Order Goodies</Link>
+        <Link to="/order-goodies">Order Goodies</Link>
         <Link to="/contact">Contact Us</Link>
       </div>
     </div>

@@ -1,4 +1,4 @@
-# React Web App - Nessie's Bakery (portfolio project)
+# React Web App - Three Little Ladies Bakery (portfolio project)
 
 This is a mock bakery website for a local baker of my hometown (Indiana). 
 This application will help add professional value and cater to more locals and community vendor events

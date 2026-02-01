@@ -19,7 +19,7 @@ function App() {
       .then((data) => setBackendMessage(data.message));
   }, []);
   return (
-    <div style={appStyles.AppWithPadding}>
+    <div style={appStyles.App - grid}>
       <header style={appStyles.Header}>Three Little Ladies Bakery</header>
       {backendMessage && (
         <div style={appStyles.backendMessage}>{backendMessage}</div>
@@ -46,11 +46,7 @@ function App() {
 export default App;
 
 const appStyles = {
-  // App: {
-  //   textAlign: "center",
-  //   backgroundColor: "#f5f3ff",
-  // },
-  AppWithPadding: {
+  AppGrid: {
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
