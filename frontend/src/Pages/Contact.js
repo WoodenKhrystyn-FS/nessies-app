@@ -13,7 +13,7 @@ function Contact() {
         fill out the form below and allow response within 24 hours.
       </p>
       <form>
-        <label>Name:</label>
+        <label>First Name:</label>
         <input type="text" placeholder="Type First Name" />
         <br />
         <label>Surname:</label>
