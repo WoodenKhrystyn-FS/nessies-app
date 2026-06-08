@@ -6,7 +6,7 @@ const GoodieForm = () => {
     <div>
       <h2>Create A Goodie</h2>
       <div className="treat">
-        <select>
+        <select inStockOnly={true}>
           Treat Type:
           <option>--Choose an Treat--</option>
           <option>Cupcakes</option>
@@ -17,7 +17,7 @@ const GoodieForm = () => {
         </select>
       </div>
       <div className="cake">
-        <select>
+        <select inStockOnly={true}>
           Cake Base:
           <option>--Choose an Cake--</option>
           <option>Vanilla</option>
@@ -28,7 +28,7 @@ const GoodieForm = () => {
         </select>
       </div>
       <div className="frosting">
-        <select>
+        <select inStockOnly={true}>
           Frosting:
           <option>--Choose a Frosting--</option>
           <option>Vanilla Buttercream</option>
@@ -39,7 +39,7 @@ const GoodieForm = () => {
         </select>
       </div>
       <div className="size">
-        <select>
+        <select inStockOnly={true}>
           Cake Size:
           <option>--Choose a Size--</option>
           <option>6 inch</option>
@@ -48,7 +48,7 @@ const GoodieForm = () => {
           <option>12 inch</option>
         </select>
       </div>
-      <div>
+      {/* <div>
         <label>Special Instructions:</label>
         <br />
         <textarea
@@ -56,15 +56,15 @@ const GoodieForm = () => {
           cols="50"
           placeholder="Enter any special instructions here..."
         ></textarea>
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <label>Quantity:</label>
         <input type="number" min="1" max="100" defaultValue="1" />
       </div>
       <div>
         <label>Pickup Date:</label>
         <input type="date" />
-      </div>
+      </div> */}
 
       <Button
         onClick={() => alert("Goodie form submitted!")}

@@ -19,10 +19,10 @@ function GoodieCard({ id, name, price, image }) {
           {available ? "Available" : "Out of Stock"}
         </p>
       </div>
-      <Button text="Create goodie" onClick={() => navigate(`/goodies/${id}/create`)} />
+      <Button text="Create A Goodie" onClick={() => navigate(`/goodies/${id}/create`)} />
       <Button text="Checkout Goodies" onClick={() => navigate(`${GoodieForm}`)} />
-      <Button text="Add to Cart" onClick={() => navigate("/cart")} />
-      <Button text="View Details" onClick={() => navigate(`/goodies/${id}`)} />
+      <Button text="Add to Goodie Cart" onClick={() => navigate("/cart")} />
+      <Button text="Goodie Details" onClick={() => navigate(`/goodies/${id}`)} />
     </div>
   );
 }
