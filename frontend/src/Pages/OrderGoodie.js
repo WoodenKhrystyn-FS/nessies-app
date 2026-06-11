@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import GoodieCard from "../Components/GoodieCard";
 
 function OrderGoodies() {
@@ -44,6 +44,5 @@ const gridStyles = {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
     gap: "20px",
-    
   },
 };

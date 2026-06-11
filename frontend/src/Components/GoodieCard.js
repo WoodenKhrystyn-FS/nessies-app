@@ -1,8 +1,9 @@
 import React from "react";
-import image from "../IMAGES/brownies.jpeg";
+import  { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
-function GoodieCard({ id, name, price, image }) {
+function GoodieCard({ id, name, price, description, category, available, image }) {
+  const navigate = useNavigate();
   return (
     <div>
       <div key={id} className="goodie-card" style={cardStyles.GoodieCard}>
