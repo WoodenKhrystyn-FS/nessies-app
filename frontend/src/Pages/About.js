@@ -1,5 +1,5 @@
 import React from "react";
-import owner from "../IMAGES/tllb_owner.jpeg.heic";
+import owner from "../IMAGES/tllb_owner.jpeg";
 
 function About() {
   return (

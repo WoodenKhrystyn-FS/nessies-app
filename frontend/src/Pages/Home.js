@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Gallery from "../Components/Gallery";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="home-container">
       <section style={homeStyles.hero}>
@@ -15,7 +18,7 @@ function Home() {
         </p>
 
         <button
-          onClick={() => (window.location.href = "/menu")}
+          onClick={() => navigate("/order-goodie")}
           style={homeStyles.button}
         >
           View Our Menu
@@ -47,7 +50,7 @@ const homeStyles = {
     padding: "50px 20px",
   },
   welcomeMessage: {
-    fontSize: "48px",
+    fontSize: "36px",
     margin: "10px 0",
   },
   tagline: {
@@ -71,7 +74,10 @@ const homeStyles = {
     cursor: "pointer",
   },
   gallery: {
-    maxWidth: "800px",
-    margin: "0 auto",
+    // maxWidth: "800px",
+    // margin: "0 auto",
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+    gap: "1rem",
   },
 };

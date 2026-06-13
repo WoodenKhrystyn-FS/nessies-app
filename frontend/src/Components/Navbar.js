@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "../IMAGES/Logo.png";
 
 function Navbar() {
@@ -12,10 +12,10 @@ function Navbar() {
         style={navbarStyles.Logo}
       />
       <div className="links" style={navbarStyles.links}>
-        <Link to="/">Home</Link>
-        <Link to="/about">About Us</Link>
-        <Link to="/menu">Order Goodies</Link>
-        <Link to="/contact">Contact Us</Link>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About Us</NavLink>
+        <NavLink to="/order-goodie">Order Goodies</NavLink>
+        <NavLink to="/contact">Contact Us</NavLink>
       </div>
     </div>
   );
@@ -26,9 +26,11 @@ export default Navbar;
 const navbarStyles = {
   navbar: {
     backgroundColor: "#f8f8f8",
-    padding: "10px 0",
+    padding: "10px 20px",
     borderBottom: "1px solid #e7e7e7",
-    fontSize: "20px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   links: {
     listStyleType: "none",
@@ -41,7 +43,5 @@ const navbarStyles = {
   },
   Logo: {
     height: "60px",
-    marginRight: "1020px",
-    
   },
 };
