@@ -12,27 +12,27 @@ function GoodieCard({
   image,
 }) {
   const navigate = useNavigate();
+
+  console.log("Price in GoodieCard:", {
+    id,
+    name,
+    price,
+    description,
+  });
+
   return (
-    <div>
-      <div key={id} className="goodie-card" style={cardStyles.GoodieCard}>
-        <img src={image} alt={name} style={cardStyles.image} />
-        <div>
-          <h3>{name}</h3>
-          <p style={cardStyles.price}>
-            Price: ${Number(price || 0).toFixed(2)}
-            console.log("Price in GoodieCard:", {
-          id,
-          name,
-          price,
-          description});
-          </p>
-          <p style={cardStyles.description}>{description}</p>
-        </div>
-        <p style={cardStyles.category}>Category: {category}</p>
-        <p style={cardStyles.availability}>
-          {available ? "Available" : "Out of Stock"}
-        </p>
+    <div className="goodie-card" style={cardStyles.GoodieCard}>
+      <img src={image} alt={name} style={cardStyles.image} />
+      <div>
+        <h3>{name}</h3>
+        <p style={cardStyles.price}>Price: ${Number(price || 0).toFixed(2)}</p>
+        <p style={cardStyles.description}>{description}</p>
       </div>
+      <p style={cardStyles.category}>Category: {category}</p>
+      <p style={cardStyles.availability}>
+        {available ? "Available" : "Out of Stock"}
+      </p>
+
       <Button text="Checkout Goodies" onClick={() => navigate("/checkout")} />
       <Button text="Add to Cart" onClick={() => navigate("/cart")} />
     </div>
