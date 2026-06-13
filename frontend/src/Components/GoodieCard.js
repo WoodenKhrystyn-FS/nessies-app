@@ -1,8 +1,16 @@
 import React from "react";
-import  { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
-function GoodieCard({ id, name, price, description, category, available, image }) {
+function GoodieCard({
+  id,
+  name,
+  price,
+  description,
+  category,
+  available,
+  image,
+}) {
   const navigate = useNavigate();
   return (
     <div>
@@ -10,7 +18,14 @@ function GoodieCard({ id, name, price, description, category, available, image }
         <img src={image} alt={name} style={cardStyles.image} />
         <div>
           <h3>{name}</h3>
-          <p style={cardStyles.price}>Price: ${price.toFixed(2)}</p>
+          <p style={cardStyles.price}>
+            Price: ${Number(price || 0).toFixed(2)}
+            console.log("Price in GoodieCard:", {
+          id,
+          name,
+          price,
+          description});
+          </p>
           <p style={cardStyles.description}>{description}</p>
         </div>
         <p style={cardStyles.category}>Category: {category}</p>
