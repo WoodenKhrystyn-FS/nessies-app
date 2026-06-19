@@ -6,7 +6,7 @@ const GoodieForm = () => {
     <div>
       <h2>Create A Goodie</h2>
       <div className="treat">
-        <select inStockOnly={true}>
+        <select>
           Treat Type:
           <option>--Choose an Treat--</option>
           <option>Cupcakes</option>
@@ -17,7 +17,7 @@ const GoodieForm = () => {
         </select>
       </div>
       <div className="cake">
-        <select inStockOnly={true}>
+        <select>
           Cake Base:
           <option>--Choose an Cake--</option>
           <option>Vanilla</option>
@@ -28,7 +28,7 @@ const GoodieForm = () => {
         </select>
       </div>
       <div className="frosting">
-        <select inStockOnly={true}>
+        <select>
           Frosting:
           <option>--Choose a Frosting--</option>
           <option>Vanilla Buttercream</option>
@@ -39,7 +39,7 @@ const GoodieForm = () => {
         </select>
       </div>
       <div className="size">
-        <select inStockOnly={true}>
+        <select>
           Cake Size:
           <option>--Choose a Size--</option>
           <option>6 inch</option>
