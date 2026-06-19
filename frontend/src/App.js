@@ -19,7 +19,7 @@ function App() {
       .then((data) => setBackendMessage(data.message));
   }, []);
   return (
-    <div style={appStyles.App - grid}>
+    <div style={appStyles.AppGrid}>
       <header style={appStyles.Header}>Three Little Ladies Bakery</header>
       {backendMessage && (
         <div style={appStyles.backendMessage}>{backendMessage}</div>
@@ -32,7 +32,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/order-goodie" element={<OrderGoodies />} />
-          <Route path="/contact" element={<Contact Us/>} />
+          <Route path="/contact" element={<Contact Us />} />
         </Routes>
       </main>
 

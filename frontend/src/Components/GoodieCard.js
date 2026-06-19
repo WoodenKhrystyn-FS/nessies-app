@@ -1,10 +1,19 @@
 import React from "react";
-import image from "../IMAGES/brownies.jpeg";
+//import image from "../IMAGES/brownies.jpeg";
 import { useNavigate } from "react-router-dom";
 import GoodieForm from "./GoodieForm";
 import Button from "./Button";
 
-function GoodieCard({ id, name, price, image }) {
+function GoodieCard({
+  id,
+  name,
+  price,
+  image,
+  description,
+  category,
+  available,
+}) {
+  const navigate = useNavigate();
   return (
     <div>
       <div key={id} className="goodie-card" style={cardStyles.GoodieCard}>
@@ -19,8 +28,14 @@ function GoodieCard({ id, name, price, image }) {
           {available ? "Available" : "Out of Stock"}
         </p>
       </div>
-      <Button text="Create goodie" onClick={() => navigate(`/goodies/${id}/create`)} />
-      <Button text="Checkout Goodies" onClick={() => navigate(`${GoodieForm}`)} />
+      <Button
+        text="Create goodie"
+        onClick={() => navigate(`/goodies/${id}/create`)}
+      />
+      <Button
+        text="Checkout Goodies"
+        onClick={() => navigate(`${GoodieForm}`)}
+      />
       <Button text="Add to Cart" onClick={() => navigate("/cart")} />
       <Button text="View Details" onClick={() => navigate(`/goodies/${id}`)} />
     </div>
