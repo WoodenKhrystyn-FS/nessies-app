@@ -1,17 +1,27 @@
 import React from "react";
-import image from "../IMAGES/brownies.jpeg";
-import { useNavigate } from "react-router-dom";
-import GoodieForm from "./GoodieForm";
-import Button from "./Button";
+//import image from "../IMAGES/brownies.jpeg";
+//import { useNavigate } from "react-router-dom";
+//import GoodieForm from "./GoodieForm";
+//import Button from "./Button";
 
-function GoodieCard({ id, name, price, image }) {
+function GoodieCard({
+  id = 0,
+  name = "Unknown Goodie",
+  price = 0,
+  description = "No description available",
+  category = "Uncategorized",
+  available = false,
+  image,
+}) {
   return (
     <div>
-      <div key={id} className="goodie-card" style={cardStyles.GoodieCard}>
+      <div className="goodie-card" style={cardStyles.GoodieCard}>
         <img src={image} alt={name} style={cardStyles.image} />
         <div>
           <h3>{name}</h3>
-          <p style={cardStyles.price}>Price: ${price.toFixed(2)}</p>
+          <p style={cardStyles.price}>
+            Price: ${(Number(price) || 0).toFixed(2)}
+          </p>
           <p style={cardStyles.description}>{description}</p>
         </div>
         <p style={cardStyles.category}>Category: {category}</p>
