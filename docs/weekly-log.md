@@ -39,3 +39,44 @@ I successfully created GitHub milestones, structured project issues, and began i
 - Strenghten naviagation and user flow.
 - Implement accessibility that I found during R/D.
 - Optimize website images and overall performance.
+
+---
+
+## Weekly Log - Milestone 3
+
+### ⚙️ Overview
+
+I focused on research, security awareness and improving the Three Little Ladies Bakery application. I completed research on code scanning and security tools, SWOT Analysis and EFF topics related to Fair Use and Reading Accessibility. I also reviewed several areas of the application, including improvements of homepage, navigation, routing and component stability.
+
+With development, I have updated the Home page structure, reviewed the navigation experience and debugged issues related to the components GoodieCard and OrderGoodies. I improved error handling and worked towards making the application more stable when loading data from the backend API - which I am still working on.
+
+### 🌵 Challenges
+
+One of the biggest challenges was troubleshotting runtime errors caseued by undefined values being passed to components. The GoodieCard component was attempting to format price value that were not always available, causing application crashes.
+
+By addressing this issue, I had to review the API data flow that add defensice programming techniques, verify prop handling and updated component logic to safely handle missing data.
+
+Another challenge was ensuring routes and navigation links remained consistent throughout the application. I reviewed existing routes and identified areas that require additional implementation before enabling certain navigation features.
+
+### 🏆 Accomplishments
+
+This week I improved my understanding of:
+
+- Application security and code scanning tools
+- SWOT analysis as a project planning strategy
+- Copyright, Fair Use, and accessibility considerations
+- React component debugging
+- API data handling and validation
+- Defensive programming techniques
+- Improving application stability through error prevention
+
+I also gained additional experience reviewing code for potential security and usability concerns before implementation.
+
+### 🔮 Next Steps
+
+- Continue improving the homepage design and user experience
+- Refine styling and responsive layouts across the site
+- Complete additional testing of API integration
+- Implement missing functionality for ordering and checkout workflows
+- Continue documenting development progress through GitHub Issues, - Pull Requests, and milestone tracking
+- Research future enhancements such as online ordering and customer inquiry features
