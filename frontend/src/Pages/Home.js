@@ -57,11 +57,11 @@ function Home() {
       </section>
 
       {/* CTA - Contact Section */}
-      <section style={homeStyles.contactSection}>
+      <section style={homeStyles.ctaSection}>
         <h2>Reach Out!</h2>
         <p>Have questions or want to place a custom order? Reach out to us!</p>
         <button
-          style={homeStyles.contactButton}
+          style={homeStyles.ctaButton}
           onClick={() => (window.location.href = "/contact")}
         >
           Contact Us
@@ -115,11 +115,11 @@ const homeStyles = {
     padding: "40px 20px",
     textAlign: "center",
   },
-  contactSection: {
-    padding: "40px 20px",
+  ctaSection: {
+    padding: "50px 20px",
     textAlign: "center",
   },
-  contactButton: {
+  ctaButton: {
     padding: "10px 20px",
     fontSize: "16px",
     backgroundColor: "#4CAF50",
