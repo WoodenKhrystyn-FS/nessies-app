@@ -1,17 +1,30 @@
 import React from "react";
-import image from "../IMAGES/brownies.jpeg";
+import PropTypes from "prop-types";
+//import image from "../IMAGES/brownies.jpeg";
 import { useNavigate } from "react-router-dom";
-import GoodieForm from "./GoodieForm";
+//import GoodieForm from "./GoodieForm";
 import Button from "./Button";
 
-function GoodieCard({ id, name, price, image }) {
+function GoodieCard({
+  id,
+  name,
+  price,
+  description,
+  category,
+  available,
+  image,
+}) {
+  const navigate = useNavigate();
+
   return (
     <div>
-      <div key={id} className="goodie-card" style={cardStyles.GoodieCard}>
+      <div className="goodie-card" style={cardStyles.GoodieCard}>
         <img src={image} alt={name} style={cardStyles.image} />
         <div>
           <h3>{name}</h3>
-          <p style={cardStyles.price}>Price: ${price.toFixed(2)}</p>
+          <p style={cardStyles.price}>
+            Price: ${(Number(price) || 0).toFixed(2)}
+          </p>
           <p style={cardStyles.description}>{description}</p>
         </div>
         <p style={cardStyles.category}>Category: {category}</p>
@@ -19,13 +32,30 @@ function GoodieCard({ id, name, price, image }) {
           {available ? "Available" : "Out of Stock"}
         </p>
       </div>
-      <Button text="Create goodie" onClick={() => navigate(`/goodies/${id}/create`)} />
-      <Button text="Checkout Goodies" onClick={() => navigate(`${GoodieForm}`)} />
-      <Button text="Add to Cart" onClick={() => navigate("/cart")} />
-      <Button text="View Details" onClick={() => navigate(`/goodies/${id}`)} />
+      <Button
+        text="Create A Goodie"
+        onClick={() => navigate(`/goodies/${id}/create`)}
+      />
+      <Button text="Checkout Goodies" onClick={() => navigate(`/checkout`)} />
+      <Button text="Add to Goodie Cart" onClick={() => navigate("/cart")} />
+      <Button
+        text="Goodie Details"
+        onClick={() => navigate(`/goodies/${id}`)}
+      />
     </div>
   );
 }
+
+GoodieCard.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  description: PropTypes.string,
+  category: PropTypes.string,
+  available: PropTypes.bool,
+  image: PropTypes.string,
+};
+
 export default GoodieCard;
 
 const cardStyles = {

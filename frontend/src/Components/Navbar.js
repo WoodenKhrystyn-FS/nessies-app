@@ -14,7 +14,7 @@ function Navbar() {
       <div className="links" style={navbarStyles.links}>
         <Link to="/">Home</Link>
         <Link to="/about">About Us</Link>
-        <Link to="/order-goodies">Order Goodies</Link>
+        <Link to="/order-goodie">Order Goodies</Link>
         <Link to="/contact">Contact Us</Link>
       </div>
     </div>
@@ -42,6 +42,5 @@ const navbarStyles = {
   Logo: {
     height: "60px",
     marginRight: "1020px",
-    
   },
 };

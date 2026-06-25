@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import GoodieCard from "../Components/GoodieCard";
 
 function OrderGoodies() {
@@ -29,9 +29,8 @@ function OrderGoodies() {
 
       <div className="goodie-grid" style={gridStyles.goodieGrid}>
         {goodies.map((goodie) => (
-          <GoodieCard goodie={goodie} />
+          <GoodieCard key={goodie.id} {...goodie} />
         ))}
-        <GoodieCard goodies={goodies} />
       </div>
     </div>
   );
@@ -44,6 +43,5 @@ const gridStyles = {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
     gap: "20px",
-    
   },
 };
