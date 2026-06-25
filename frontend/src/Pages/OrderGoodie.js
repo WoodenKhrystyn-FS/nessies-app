@@ -21,6 +21,9 @@ function OrderGoodies() {
   if (loading) {
     return <div>Loading goodies...</div>;
   }
+  if (!loading && goodies.length === 0) {
+    return <div>No goodies available at the moment.</div>;
+  }
 
   return (
     <div>

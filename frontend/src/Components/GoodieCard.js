@@ -1,21 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
 //import image from "../IMAGES/brownies.jpeg";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 //import GoodieForm from "./GoodieForm";
-import Button from "./Button";
+//import Button from "./Button";
 
 function GoodieCard({
-  id,
-  name,
-  price,
-  description,
-  category,
-  available,
+  id = 0,
+  name = "Unknown Goodie",
+  price = 0,
+  description = "No description available",
+  category = "Uncategorized",
+  available = false,
   image,
 }) {
-  const navigate = useNavigate();
-
   return (
     <div>
       <div className="goodie-card" style={cardStyles.GoodieCard}>
@@ -32,16 +29,13 @@ function GoodieCard({
           {available ? "Available" : "Out of Stock"}
         </p>
       </div>
-      <Button
-        text="Create A Goodie"
-        onClick={() => navigate(`/goodies/${id}/create`)}
-      />
-      <Button text="Checkout Goodies" onClick={() => navigate(`/checkout`)} />
-      <Button text="Add to Goodie Cart" onClick={() => navigate("/cart")} />
-      <Button
-        text="Goodie Details"
-        onClick={() => navigate(`/goodies/${id}`)}
-      />
+
+      {/* Disabling buttons until the proper functionality is implemented */}
+
+      {/* <Button text="Create goodie" onClick={() => navigate(`/goodies/${id}/create`)} />
+      <Button text="Checkout Goodies" onClick={() => navigate(`${GoodieForm}`)} />
+      <Button text="Add to Cart" onClick={() => navigate("/cart")} />
+      <Button text="View Details" onClick={() => navigate(`/goodies/${id}`)} /> */}
     </div>
   );
 }
