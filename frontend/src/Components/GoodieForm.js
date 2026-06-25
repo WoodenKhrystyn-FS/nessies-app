@@ -48,7 +48,7 @@ const GoodieForm = () => {
           <option>12 inch</option>
         </select>
       </div>
-      <div>
+      {/* <div>
         <label>Special Instructions:</label>
         <br />
         <textarea
@@ -56,15 +56,15 @@ const GoodieForm = () => {
           cols="50"
           placeholder="Enter any special instructions here..."
         ></textarea>
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <label>Quantity:</label>
         <input type="number" min="1" max="100" defaultValue="1" />
       </div>
       <div>
         <label>Pickup Date:</label>
         <input type="date" />
-      </div>
+      </div> */}
 
       <Button
         onClick={() => alert("Goodie form submitted!")}

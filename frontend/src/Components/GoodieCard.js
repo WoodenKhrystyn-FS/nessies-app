@@ -39,6 +39,17 @@ function GoodieCard({
     </div>
   );
 }
+
+GoodieCard.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  description: PropTypes.string,
+  category: PropTypes.string,
+  available: PropTypes.bool,
+  image: PropTypes.string,
+};
+
 export default GoodieCard;
 
 const cardStyles = {

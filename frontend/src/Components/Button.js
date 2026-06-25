@@ -1,11 +1,13 @@
-function Button() {
-  const handleClick = () => {
-    console.log("Button clicked!");
-    //alert("Your message has been sent!");
-  };
-  handleClick();
+import React from "react";
+import PropTypes from "prop-types";
 
-  return <button onClick={handleClick}>Button</button>;
+function Button({ text, onClick }) {
+  return <button onClick={onClick}>{text}</button>;
 }
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default Button;
