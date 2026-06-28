@@ -46,9 +46,12 @@ export default Gallery;
 
 const galleryStyles = {
   galleryContainer: {
-    width: "40%",
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "20px",
     maxWidth: "900px",
-    margin: "0px auto",
-    padding: " 0px 20px",
+    margin: "0 auto",
+    borderRadius: "12px",
+    objectFit: "cover",
   },
 };

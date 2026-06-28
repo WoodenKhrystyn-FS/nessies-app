@@ -1,7 +1,10 @@
 function Footer() {
   return (
     <footer style={styles.footer}>
-      <p>© 2025 Three Little Ladies Bakery. All rights reserved.</p>
+      <p>
+        Three Little Ladies Bakery 📍 Indiana 📧 Email 📞 Phone Follow us:
+        Facebook Instagram © 2026
+      </p>
     </footer>
   );
 }
@@ -15,5 +18,4 @@ const styles = {
     textAlign: "center",
     fontSize: ".87rem",
   },
-}
-
+};

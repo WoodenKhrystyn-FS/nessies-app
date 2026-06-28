@@ -19,7 +19,7 @@ function App() {
       .then((data) => setBackendMessage(data.message));
   }, []);
   return (
-    <div style={appStyles.AppWithPadding}>
+    <div style={appStyles.AppGrid}>
       <header style={appStyles.Header}>Three Little Ladies Bakery</header>
       {backendMessage && (
         <div style={appStyles.backendMessage}>{backendMessage}</div>
@@ -46,27 +46,21 @@ function App() {
 export default App;
 
 const appStyles = {
-  // App: {
-  //   textAlign: "center",
-  //   backgroundColor: "#f5f3ff",
-  // },
-  AppWithPadding: {
+  AppGrid: {
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "#9D75CB",
-    opacity: "0.80",
     fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
   },
   Header: {
     backgroundColor: "#111827",
-    height: "3.5rem",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     color: "#ffffff",
-    fontSize: "1.3rem",
-    fontWeight: 500,
+    fontSize: "2rem",
+    fontWeight: "700",
+    padding: "1rem",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
     letterSpacing: ".04rem",
   },

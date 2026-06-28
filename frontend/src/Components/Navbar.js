@@ -8,20 +8,34 @@ function Navbar() {
       <img
         className="Logo"
         src={Logo}
-        alt="3 Lil Ladies Baked Goods Logo"
+        alt="Three Little Ladies Bakery Logo"
         style={navbarStyles.Logo}
       />
       <div className="links" style={navbarStyles.links}>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About Us</NavLink>
-        <NavLink to="/order-goodie">Order Goodies</NavLink>
-        <NavLink to="/contact">Contact Us</NavLink>
+        <NavLink to="/" end style={navLinkStyle}>
+          Home
+        </NavLink>
+        <NavLink to="/about" style={navLinkStyle}>
+          About Us
+        </NavLink>
+        <NavLink to="/order-goodie" style={navLinkStyle}>
+          Order Goodies
+        </NavLink>
+        <NavLink to="/contact" style={navLinkStyle}>
+          Contact Us
+        </NavLink>
       </div>
     </div>
   );
 }
 
 export default Navbar;
+
+const navLinkStyle = ({ isActive }) => ({
+  color: isActive ? "#d97706" : "#111827",
+  textDecoration: "none",
+  fontWeight: 600,
+});
 
 const navbarStyles = {
   navbar: {
@@ -43,5 +57,6 @@ const navbarStyles = {
   },
   Logo: {
     height: "60px",
+    marginRight: "1rem",
   },
 };

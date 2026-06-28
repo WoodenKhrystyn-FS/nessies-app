@@ -1,50 +1,61 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
 function GoodieCard({
-  id,
-  name,
-  price,
-  description,
-  category,
-  available,
+  id = 0,
+  name = "Unknown Goodie",
+  price = 0,
+  description = "No description available",
+  category = "Uncategorized",
+  available = false,
   image,
 }) {
   const navigate = useNavigate();
 
-  console.log("Price in GoodieCard:", {
-    id,
-    name,
-    price,
-    description,
-  });
-
   return (
-    <div className="goodie-card" style={cardStyles.GoodieCard}>
-      <img src={image} alt={name} style={cardStyles.image} />
-      <div>
-        <h3>{name}</h3>
-        <p style={cardStyles.price}>Price: ${Number(price || 0).toFixed(2)}</p>
-        <p style={cardStyles.description}>{description}</p>
+    <div>
+      <div className="goodie-card" style={cardStyles.GoodieCard}>
+        <img src={image} alt={name} style={cardStyles.image} />
+        <div>
+          <h3>{name}</h3>
+          <p style={cardStyles.price}>
+            Price: ${(Number(price) || 0).toFixed(2)}
+          </p>
+          <p style={cardStyles.description}>{description}</p>
+        </div>
+        <p style={cardStyles.category}>Category: {category}</p>
+        <p style={cardStyles.availability}>
+          {available ? "Available" : "Out of Stock"}
+        </p>
       </div>
-      <p style={cardStyles.category}>Category: {category}</p>
-      <p style={cardStyles.availability}>
-        {available ? "Available" : "Out of Stock"}
-      </p>
 
       <Button text="Checkout Goodies" onClick={() => navigate("/checkout")} />
       <Button text="Add to Cart" onClick={() => navigate("/cart")} />
     </div>
   );
 }
+
+GoodieCard.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  description: PropTypes.string,
+  category: PropTypes.string,
+  available: PropTypes.bool,
+  image: PropTypes.string,
+};
+
 export default GoodieCard;
 
 const cardStyles = {
   GoodieCard: {
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    backgroundColor: "#fff",
+    background: "#fff",
+    borderRadius: "14px",
+    overflow: "hidden",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    transition: "transform 0.2s",
   },
   image: {
     width: "200px",
