@@ -55,9 +55,11 @@ export default GoodieCard;
 
 const cardStyles = {
   GoodieCard: {
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    backgroundColor: "#fff",
+    background: "#fff",
+    borderRadius: "14px",
+    overflow: "hidden",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    transition: "transform 0.2s",
   },
   image: {
     width: "200px",

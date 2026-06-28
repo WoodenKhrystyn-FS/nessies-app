@@ -47,5 +47,7 @@ const galleryStyles = {
     gap: "20px",
     maxWidth: "400px",
     margin: "0 auto",
+    borderRadius: "12px",
+    objectFit: "cover",
   },
 };
