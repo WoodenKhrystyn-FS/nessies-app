@@ -12,18 +12,22 @@ const images = [
   {
     original: brownies,
     thumbnail: brownies,
+    description: "Chocolate Brownies",
   },
   {
     original: redVelvetCupcakes,
     thumbnail: redVelvetCupcakes,
+    description: "Red Velvet Cupcakes",
   },
   {
     original: chocolateChipCookies,
     thumbnail: chocolateChipCookies,
+    description: "Chocolate Chip Cookies",
   },
   {
     original: vanillaCake,
     thumbnail: vanillaCake,
+    description: "Vanilla Cake",
   },
 ];
 
@@ -45,7 +49,7 @@ const galleryStyles = {
     display: "flex",
     flexWrap: "wrap",
     gap: "20px",
-    maxWidth: "400px",
+    maxWidth: "900px",
     margin: "0 auto",
     borderRadius: "12px",
     objectFit: "cover",

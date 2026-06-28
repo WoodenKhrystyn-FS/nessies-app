@@ -1,41 +1,43 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Gallery from "../Components/Gallery";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="home-container">
-      {/* Hero Section */}
       <section className="hero-section" style={homeStyles.heroSection}>
         <h1 className="welcome-message" style={homeStyles.welcomeMessage}>
-          {" "}
-          Welcome to Three Little Ladies Bakery! Where homemade treats are baked
-          with love! Browse our selection of goodies and discover your new
-          favorite treat.
+          Welcome to Three Little Ladies Bakery
         </h1>
-        <p style={homeStyles.tagline}>Homemade Treats for Every Occasion</p>
+
         <p style={homeStyles.tagline}>
-          Freshly baked cupcakes, cookies, and more! Even custom orders are
-          welcome!
+          Freshly baked goods made with love and passion. From our oven to your
+          table!
         </p>
+        <p style={homeStyles.tagline}>
+          Homemade treats for every occasion, including custom orders.
+        </p>
+
         <button
+          onClick={() => navigate("/order-goodie")}
           style={homeStyles.button}
-          onClick={() => (window.location.href = "/order-goodie")}
         >
           Order Now
         </button>
       </section>
-      {/* About Section */}
+
       <section className="about-section" style={homeStyles.aboutSection}>
         <h2>About Three Little Ladies Bakery</h2>
         <p>
-          Family owned and operated, Three Little Ladies Bakery is dedicated to
-          creating delicious, homemade treats for every occasion. From classic
-          cookies to custom cakes, we take pride in our baked goods and strive
-          to make every customer feel like part of our family.
+          At Three Little Ladies Bakery, we believe in the magic of homemade
+          treats. Our bakers pour their heart and soul into every batch, using
+          only the finest ingredients to create delectable pastries, cakes, and
+          breads.
         </p>
-        <p></p>
       </section>
-      {/* Products Section */}
+
       <section className="products-section" style={homeStyles.productsSection}>
         <h2>Customer Faves</h2>
         <div style={homeStyles.productsGrid}>
@@ -53,21 +55,21 @@ function Home() {
           </div>
         </div>
       </section>
-      {/* Gallery Section */}
+
       <section className="gallery-section" style={homeStyles.gallerySection}>
         <h2>Gallery</h2>
         <Gallery />
       </section>
-      {/* CTA - Contact Section */}
-      <section className="cta-section" s style={homeStyles.ctaSection}>
+
+      <section className="cta-section" style={homeStyles.ctaSection}>
         <h2>Have a Custom Order?</h2>
         <p>
-          Need cookies, cupcakes, cakes or treats for your next event? We'd love
-          to hear from you!
+          Need cookies, cupcakes, cakes, or treats for your next event? We'd
+          love to hear from you!
         </p>
         <button
+          onClick={() => navigate("/contact")}
           style={homeStyles.ctaButton}
-          onClick={() => (window.location.href = "/contact")}
         >
           Contact Us
         </button>
@@ -79,6 +81,12 @@ function Home() {
 export default Home;
 
 const homeStyles = {
+  heroSection: {
+    textAlign: "center",
+    padding: "5rem 2rem",
+    maxWidth: "900px",
+    margin: "0 auto",
+  },
   welcomeMessage: {
     fontSize: "3.2rem",
     lineHeight: "1.2",
@@ -101,16 +109,13 @@ const homeStyles = {
     cursor: "pointer",
     transition: ".3s",
   },
-  heroSection: {
-    textAlign: "center",
-    padding: " 5rem 2rem",
-    maxWidth: "900px",
-    margin: "0 auto",
-  },
   aboutSection: {
     padding: "5rem 2rem",
     textAlign: "center",
     backgroundColor: "#fff8f2",
+    maxWidth: "800px",
+    margin: "40px auto",
+    borderRadius: "10px",
   },
   productsSection: {
     padding: "5rem 2rem",
@@ -128,7 +133,7 @@ const homeStyles = {
     padding: "2rem",
     borderRadius: "15px",
     backgroundColor: "#fff",
-    boxShadow: "0 6px 18px rgba(0, 0, 0, 0.8)",
+    boxShadow: "0 6px 18px rgba(0, 0, 0, 0.15)",
     margin: "1rem",
   },
   gallerySection: {
@@ -148,6 +153,7 @@ const homeStyles = {
     color: "#fff",
     border: "none",
     borderRadius: "10px",
+    cursor: "pointer",
   },
   gallery: {
     maxWidth: "800px",

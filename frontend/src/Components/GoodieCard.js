@@ -1,9 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-//import image from "../IMAGES/brownies.jpeg";
-//import { useNavigate } from "react-router-dom";
-//import GoodieForm from "./GoodieForm";
-//import Button from "./Button";
+import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 function GoodieCard({
   id = 0,
@@ -14,6 +12,8 @@ function GoodieCard({
   available = false,
   image,
 }) {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="goodie-card" style={cardStyles.GoodieCard}>
@@ -31,12 +31,8 @@ function GoodieCard({
         </p>
       </div>
 
-      {/* Disabling buttons until the proper functionality is implemented */}
-
-      {/* <Button text="Create goodie" onClick={() => navigate(`/goodies/${id}/create`)} />
-      <Button text="Checkout Goodies" onClick={() => navigate(`${GoodieForm}`)} />
+      <Button text="Checkout Goodies" onClick={() => navigate("/checkout")} />
       <Button text="Add to Cart" onClick={() => navigate("/cart")} />
-      <Button text="View Details" onClick={() => navigate(`/goodies/${id}`)} /> */}
     </div>
   );
 }

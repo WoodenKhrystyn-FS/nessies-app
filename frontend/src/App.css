@@ -4,6 +4,7 @@
   text-align: center;
   background: linear-gradient(180deg, #fff8f2, #faf4ee);
 }
+
 .App-header {
   background-color: #282c34;
   height: 70px;
@@ -12,9 +13,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   color: white;
 }
+
 .App-footer {
   background-color: #282c34;
   height: 70px;
@@ -25,17 +26,33 @@
   padding: 1rem;
 }
 
+.galleryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 .Gallery-image {
   width: 220px;
   height: 220px;
+  margin: 10px;
   object-fit: cover;
   border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
 }
+
 .Gallery-image:hover {
   transform: scale(1.02);
   transition: transform 0.3s;
 }
+
+.image-gallery-slide img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
 .Menu-form {
   margin: 20px auto;
   padding: 20px;
@@ -44,6 +61,7 @@
   background-color: #fff;
   max-width: 400px;
 }
+
 .Menu-form select {
   width: 100%;
   padding: 10px;
@@ -51,11 +69,13 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 .section {
   max-width: 1400px;
   margin: auto;
   padding: 5rem 2rem;
 }
+
 button {
   padding: 14px 28px;
   font-size: 18px;
@@ -94,16 +114,37 @@ h1 {
   font-size: 42px;
   margin-bottom: 20px;
 }
+
 h2 {
   font-size: 32px;
   margin-bottom: 15px;
 }
+
 h3 {
   font-size: 24px;
   margin-bottom: 10px;
 }
+
 p {
   font-size: 18px;
   line-height: 1.6;
   color: #4b5563;
+}
+
+@media (max-width: 600px) {
+  .Gallery-image {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-gallery-thumbnail img {
+    display: none;
+  }
+
+  .links {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
 }
