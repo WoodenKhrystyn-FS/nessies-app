@@ -5,34 +5,38 @@ function Home() {
   return (
     <div className="home-container">
       {/* Hero Section */}
-      <section>
+      <section className="hero-section" style={homeStyles.heroSection}>
         <h1 className="welcome-message" style={homeStyles.welcomeMessage}>
           {" "}
-          Three Little Ladies Bakery
+          Welcome to Three Little Ladies Bakery! Where homemade treats are baked
+          with love! Browse our selection of goodies and discover your new
+          favorite treat.
         </h1>
-
-        <p styles={homeStyles.tagline}>Homemade treats made with love</p>
-
+        <p style={homeStyles.tagline}>Homemade Treats for Every Occasion</p>
+        <p style={homeStyles.tagline}>
+          Freshly baked cupcakes, cookies, and more! Even custom orders are
+          welcome!
+        </p>
         <button
           style={homeStyles.button}
           onClick={() => (window.location.href = "/order-goodie")}
         >
-          Order Goodies
+          Order Now
         </button>
       </section>
-
       {/* About Section */}
-      <section style={homeStyles.aboutSection}>
-        <h2>About Us</h2>
+      <section className="about-section" style={homeStyles.aboutSection}>
+        <h2>About Three Little Ladies Bakery</h2>
         <p>
-          Welcome to Three Little Ladies Bakery! We are passionate about
-          creating delicious homemade treats that bring joy to every bite. Our
-          bakery is dedicated to using the finest ingredients and traditional
+          Family owned and operated, Three Little Ladies Bakery is dedicated to
+          creating delicious, homemade treats for every occasion. From classic
+          cookies to custom cakes, we take pride in our baked goods and strive
+          to make every customer feel like part of our family.
         </p>
+        <p></p>
       </section>
-
       {/* Products Section */}
-      <section style={homeStyles.productsSection}>
+      <section className="products-section" style={homeStyles.productsSection}>
         <h2>Customer Faves</h2>
         <div style={homeStyles.productsGrid}>
           <div style={homeStyles.productCard}>
@@ -49,17 +53,18 @@ function Home() {
           </div>
         </div>
       </section>
-
       {/* Gallery Section */}
-      <section style={homeStyles.gallerySection}>
+      <section className="gallery-section" style={homeStyles.gallerySection}>
         <h2>Gallery</h2>
         <Gallery />
       </section>
-
       {/* CTA - Contact Section */}
-      <section style={homeStyles.ctaSection}>
-        <h2>Reach Out!</h2>
-        <p>Have questions or want to place a custom order? Reach out to us!</p>
+      <section className="cta-section" s style={homeStyles.ctaSection}>
+        <h2>Have a Custom Order?</h2>
+        <p>
+          Need cookies, cupcakes, cakes or treats for your next event? We'd love
+          to hear from you!
+        </p>
         <button
           style={homeStyles.ctaButton}
           onClick={() => (window.location.href = "/contact")}
@@ -75,61 +80,79 @@ export default Home;
 
 const homeStyles = {
   welcomeMessage: {
-    fontSize: "36px",
-    margin: "20px 0",
+    fontSize: "3.2rem",
+    lineHeight: "1.2",
+    fontWeight: "700",
+    marginBottom: "1.5rem",
+    color: "#1f2937",
   },
   tagline: {
-    fontSize: "18px",
-    marginBottom: "20px",
+    fontSize: "1.25rem",
+    marginBottom: "1rem",
+    color: "#555",
   },
   button: {
-    padding: "10px 20px",
-    fontSize: "16px",
-    backgroundColor: "#ff6f61",
+    padding: "14px 32px",
+    fontSize: "18px",
+    backgroundColor: "#d97706",
     color: "#fff",
     border: "none",
-    borderRadius: "5px",
+    borderRadius: "10px",
     cursor: "pointer",
+    transition: ".3s",
+  },
+  heroSection: {
+    textAlign: "center",
+    padding: " 5rem 2rem",
+    maxWidth: "900px",
+    margin: "0 auto",
   },
   aboutSection: {
-    padding: "40px 20px",
+    padding: "5rem 2rem",
     textAlign: "center",
+    backgroundColor: "#fff8f2",
   },
   productsSection: {
-    padding: "40px 20px",
+    padding: "5rem 2rem",
     textAlign: "center",
+    background: "#ffffff",
   },
   productsGrid: {
     display: "flex",
-    justifyContent: "space-around",
+    justifyContent: "center",
+    gap: "2rem",
     flexWrap: "wrap",
   },
   productCard: {
-    width: "250px",
-    marginBottom: "20px",
-    padding: "20px",
-    border: "1px solid #ddd",
-    borderRadius: "5px",
+    width: "280px",
+    padding: "2rem",
+    borderRadius: "15px",
+    backgroundColor: "#fff",
+    boxShadow: "0 6px 18px rgba(0, 0, 0, 0.8)",
+    margin: "1rem",
   },
   gallerySection: {
-    padding: "40px 20px",
+    padding: "5rem 2rem",
     textAlign: "center",
+    background: "#faf4ee",
   },
   ctaSection: {
-    padding: "50px 20px",
+    padding: "5rem 2rem",
     textAlign: "center",
+    background: "#fff8f2",
   },
   ctaButton: {
-    padding: "10px 20px",
-    fontSize: "16px",
-    backgroundColor: "#4CAF50",
+    padding: "14px 32px",
+    fontSize: "18px",
+    backgroundColor: "#16a34a",
     color: "#fff",
     border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
+    borderRadius: "10px",
   },
   gallery: {
     maxWidth: "800px",
     margin: "0 auto",
+    marginTop: "3rem",
+    marginBottom: "3rem",
   },
 };
