@@ -15,9 +15,22 @@ function App() {
 
   useEffect(() => {
     fetch("http://localhost:5000/api/goodies")
-      .then((res) => res.json())
-      .then((data) => setBackendMessage(data.message));
+      .then((res) => {
+        // if (!res.ok) {
+        //   throw new Error("Failed to connect to backend");
+        // }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setBackendMessage(`Loaded ${data.length} goodies`);
+      })
+      .catch((err) => {
+        console.error(err);
+        setBackendMessage("Backend unavailable");
+      });
   }, []);
+
   return (
     <div style={appStyles.AppGrid}>
       <header style={appStyles.Header}>Three Little Ladies Bakery</header>
