@@ -3,7 +3,6 @@ import Button from "../Components/Button";
 
 function Contact() {
   console.log("Contact page loaded");
-  //alert("Contact page loaded");
 
   return (
     <div className="contact-container">
@@ -13,7 +12,7 @@ function Contact() {
         fill out the form below and allow response within 24 hours.
       </p>
       <form>
-        <label>Name:</label>
+        <label>First Name:</label>
         <input type="text" placeholder="Type First Name" />
         <br />
         <label>Surname:</label>
@@ -28,11 +27,10 @@ function Contact() {
         <br></br>
       </form>
 
-      <br></br>
-      <button type="submit" name="contact-btn">
-        Submit
-        <Button />
-      </button>
+      <Button
+        onClick={() => alert("Contact form submitted!")}
+        text="Submit Contact Form"
+      />
     </div>
   );
 }
