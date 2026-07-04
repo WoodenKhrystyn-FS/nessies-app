@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import Gallery from "../Components/Gallery";
 
@@ -7,6 +8,22 @@ function Home() {
 
   return (
     <div className="home-container">
+      <Helmet>
+        <title>Three Little Ladies Bakery</title>
+        <meta
+          name="description"
+          content="Freshly baked goods made with love and passion."
+        />
+        <meta
+          name="keywords"
+          content="bakery Indiana, fresh, homemade, treats, cookies, cupcakes, cakes"
+        />
+        <meta property="og:title" content="Three Little Ladies Bakery" />
+        <meta
+          property="og:description"
+          content="Freshly baked goods made with love and passion."
+        />
+      </Helmet>
       <section className="hero-section" style={homeStyles.heroSection}>
         <h1 className="welcome-message" style={homeStyles.welcomeMessage}>
           Welcome to Three Little Ladies Bakery

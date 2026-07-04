@@ -1,10 +1,27 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import owner from "../IMAGES/tllb_owner.jpeg";
 
 function About() {
   return (
     <div>
-      <h2>About Us</h2>
+      <Helmet>
+        <title>About Three Little Ladies Bakery</title>
+        <meta
+          name="description"
+          content="Learn more about Three Little Ladies Bakery and our story."
+        />
+        <meta
+          name="keywords"
+          content="bakery, about, story, Three Little Ladies Bakery"
+        />
+        <meta property="og:title" content="About Three Little Ladies Bakery" />
+        <meta
+          property="og:description"
+          content="Learn more about Three Little Ladies Bakery and our story."
+        />
+      </Helmet>
+
       <p>
         First, lets introduce the owner of Three Little Ladies Bakery, Lillian
         V. Tender. Starting out in her kitchen she created the most delight
