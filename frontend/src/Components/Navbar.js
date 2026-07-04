@@ -1,4 +1,5 @@
 import React from "react";
+import { trackEvent } from "../utils/analytics";
 import { NavLink } from "react-router-dom";
 import Logo from "../IMAGES/Logo.png";
 
@@ -12,16 +13,41 @@ function Navbar() {
         style={navbarStyles.Logo}
       />
       <div className="links" style={navbarStyles.links}>
-        <NavLink to="/" end style={navLinkStyle}>
+        <NavLink
+          to="/"
+          end
+          style={navLinkStyle}
+          onClick={() => {
+            trackEvent("Navigation", "click", "Home Link", "Navbar");
+          }}
+        >
           Home
         </NavLink>
-        <NavLink to="/about" style={navLinkStyle}>
+        <NavLink
+          to="/about"
+          style={navLinkStyle}
+          onClick={() => {
+            trackEvent("Navigation", "click", "About Us Link", "Navbar");
+          }}
+        >
           About Us
         </NavLink>
-        <NavLink to="/order-goodie" style={navLinkStyle}>
+        <NavLink
+          to="/order-goodie"
+          style={navLinkStyle}
+          onClick={() => {
+            trackEvent("Navigation", "click", "Order Goodies Link", "Navbar");
+          }}
+        >
           Order Goodies
         </NavLink>
-        <NavLink to="/contact" style={navLinkStyle}>
+        <NavLink
+          to="/contact"
+          style={navLinkStyle}
+          onClick={() => {
+            trackEvent("Navigation", "click", "Contact Us Link", "Navbar");
+          }}
+        >
           Contact Us
         </NavLink>
       </div>

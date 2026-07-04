@@ -1,4 +1,5 @@
 import React from "react";
+import { trackEvent } from "../utils/analytics";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import "../App.css";
@@ -35,6 +36,9 @@ function Gallery() {
   return (
     <div className="galleryContainer" style={galleryStyles.galleryContainer}>
       <ImageGallery
+        onClick={() => {
+          trackEvent("Gallery", "click", "Image Clicked", "Gallery Section");
+        }}
         items={images}
         showFullscreenButton={true}
         showPlayButton={true}
