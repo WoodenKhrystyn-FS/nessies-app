@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import GoodieCard from "../Components/GoodieCard";
 
 function OrderGoodies() {
@@ -37,7 +38,26 @@ function OrderGoodies() {
 
   return (
     <div>
-      <h2>Order Goodies</h2>
+      <Helmet>
+        <title>Order Goodies - Three Little Ladies Bakery</title>
+        <meta
+          name="description"
+          content="Order freshly baked goodies from Three Little Ladies Bakery."
+        />
+        <meta
+          name="keywords"
+          content="order, bakery, goodies, cupcakes, cookies, cakes"
+        />
+        <meta
+          property="og:title"
+          content="Order Goodies - Three Little Ladies Bakery"
+        />
+        <meta
+          property="og:description"
+          content="Order freshly baked goodies from Three Little Ladies Bakery."
+        />
+      </Helmet>
+
       <p>Choose from items below!</p>
 
       <div className="goodie-grid" style={gridStyles.goodieGrid}>

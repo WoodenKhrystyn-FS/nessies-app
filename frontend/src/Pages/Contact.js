@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import Button from "../Components/Button";
 
 function Contact() {
@@ -6,7 +7,26 @@ function Contact() {
 
   return (
     <div className="contact-container">
-      <h2>Contact Us</h2>
+      <Helmet>
+        <title>Contact Three Little Ladies Bakery</title>
+        <meta
+          name="description"
+          content="Get in touch with Three Little Ladies Bakery for inquiries and orders."
+        />
+        <meta
+          name="keywords"
+          content="contact, bakery, inquiries, orders, Three Little Ladies Bakery"
+        />
+        <meta
+          property="og:title"
+          content="Contact Three Little Ladies Bakery"
+        />
+        <meta
+          property="og:description"
+          content="Get in touch with Three Little Ladies Bakery for inquiries and orders."
+        />
+      </Helmet>
+
       <p>
         We want to hear from you! Have questions about an order or menu item,
         fill out the form below and allow response within 24 hours.
