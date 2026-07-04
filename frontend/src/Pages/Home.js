@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { trackEvent } from "../utils/analytics";
 import Gallery from "../Components/Gallery";
 
 function Home() {
@@ -21,8 +22,13 @@ function Home() {
         </p>
 
         <button
-          onClick={() => navigate("/order-goodie")}
           style={homeStyles.button}
+          onClick={() => {
+            trackEvent("CTA", "click", "Order Now Button", "Home Hero Section");
+            navigate("/order-goodie");
+
+            window.location.href = "/order-goodie";
+          }}
         >
           Order Now
         </button>
@@ -68,8 +74,16 @@ function Home() {
           love to hear from you!
         </p>
         <button
-          onClick={() => navigate("/contact")}
           style={homeStyles.ctaButton}
+          onClick={() => {
+            trackEvent(
+              "CTA",
+              "click",
+              "Contact Us Button",
+              "Home Hero Section",
+            );
+            window.location.href = "/contact";
+          }}
         >
           Contact Us
         </button>
