@@ -1,4 +1,6 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+import { initGA, trackPageView } from "./utils/analytics";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
@@ -12,6 +14,11 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [backendMessage, setBackendMessage] = useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    trackPageView(location.pathname);
+  }, [location]);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/goodies")
