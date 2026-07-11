@@ -1,6 +1,7 @@
 import React from "react";
 import businessInfo from "../utils/businessInfo";
-import { Helmet } from "react-helmet-async";
+//import { Helmet } from "react-helmet-async";
+import SEO from "../Components/SEO";
 import Button from "../Components/Button";
 
 function Contact() {
@@ -8,7 +9,7 @@ function Contact() {
 
   return (
     <div className="contact-container">
-      <Helmet>
+      <SEO>
         <title>Contact Us | Three Little Ladies Bakery</title>
         <meta
           name="description"
@@ -26,7 +27,7 @@ function Contact() {
           property="og:description"
           content="Get in touch with Three Little Ladies Bakery for inquiries and orders."
         />
-      </Helmet>
+      </SEO>
 
       <h1>Contact Us</h1>
 

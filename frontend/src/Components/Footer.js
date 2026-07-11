@@ -22,17 +22,21 @@ function Footer() {
         >
           {businessInfo.phone}
         </a>{" "}
-        Follow us: Facebook Instagram © 2026
+        <div className="footer-hours">
+          <p>{businessInfo.hours.monday}</p>
+          <p>{businessInfo.hours.tuesday}</p>
+          <p>{businessInfo.hours.wednesday}</p>
+          <p>{businessInfo.hours.thursday}</p>
+          <p>{businessInfo.hours.friday}</p>
+          <p>{businessInfo.hours.saturday}</p>
+          <p>{businessInfo.hours.sunday}</p>
+        </div>
+        © 2026 Three Little Ladies Bakery. All rights reserved. This website is
+        for informational purposes only and does not constitute an offer to sell
+        or a solicitation of an offer to buy any products or services. All
+        content is provided "as is" without warranty of any kind, either express
+        or implied.
       </p>
-      <div className="footer-hours">
-        <p>{businessInfo.hours.monday}</p>
-        <p>{businessInfo.hours.tuesday}</p>
-        <p>{businessInfo.hours.wednesday}</p>
-        <p>{businessInfo.hours.thursday}</p>
-        <p>{businessInfo.hours.friday}</p>
-        <p>{businessInfo.hours.saturday}</p>
-        <p>{businessInfo.hours.sunday}</p>
-      </div>
     </footer>
   );
 }

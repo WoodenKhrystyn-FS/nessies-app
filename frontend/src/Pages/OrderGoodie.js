@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
+//import { Helmet } from "react-helmet-async";
+import SEO from "../Components/SEO";
 import GoodieCard from "../Components/GoodieCard";
+import GoodieForm from "../Components/GoodieForm";
 
 function OrderGoodies() {
   const [goodies, setGoodies] = useState([]);
@@ -38,11 +40,11 @@ function OrderGoodies() {
 
   return (
     <div>
-      <Helmet>
+      <SEO>
         <title>Order Goodies - Three Little Ladies Bakery</title>
         <meta
           name="description"
-          content="Order freshly baked goodies from Three Little Ladies Bakery."
+          content="Order freshly baked goodies from Three Little Ladies Bakery, including cupcakes, cookies, and cakes."
         />
         <meta
           name="keywords"
@@ -54,9 +56,9 @@ function OrderGoodies() {
         />
         <meta
           property="og:description"
-          content="Order freshly baked goodies from Three Little Ladies Bakery."
+          content="Order freshly baked goodies from Three Little Ladies Bakery, including cupcakes, cookies, and cakes."
         />
-      </Helmet>
+      </SEO>
 
       <p>Choose from items below!</p>
 
