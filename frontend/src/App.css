@@ -131,6 +131,51 @@ p {
   color: #4b5563;
 }
 
+.contact-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  /* background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+.business-info,
+.business-hours {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff8f2;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.business-info a {
+  color: #d97706;
+  text-decoration: none;
+}
+
+.business-info a:hover {
+  text-decoration: underline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
 @media (max-width: 600px) {
   .Gallery-image {
     width: 100%;

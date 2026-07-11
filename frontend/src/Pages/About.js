@@ -1,8 +1,13 @@
 import React from "react";
+//import businessInfo from "../utils/businessInfo";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import owner from "../IMAGES/tllb_owner.jpeg";
+import Button from "../Components/Button";
 
 function About() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Helmet>
@@ -54,6 +59,22 @@ function About() {
       </div>
       <br />
       <p>Lillian V. Tender, Owner of Three Little Ladies Bakery</p>
+
+      <section>
+        <h2>Ready to Serve You</h2>
+
+        <p>
+          Whether you're planning a wedding, birthday, or special event, we are
+          here to make your celebration even sweeter. Contact us today to
+          discuss your order and let us create a memorable experience for you
+          and your guests.
+        </p>
+        <Button
+          aria-label="Contact Us"
+          onClick={() => navigate("/contact")}
+          text="Contact Us"
+        />
+      </section>
     </div>
   );
 }
