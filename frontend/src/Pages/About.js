@@ -1,7 +1,8 @@
 import React from "react";
 //import businessInfo from "../utils/businessInfo";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+//import { Helmet } from "react-helmet-async";
+import SEO from "../Components/SEO";
 import owner from "../IMAGES/tllb_owner.jpeg";
 import Button from "../Components/Button";
 
@@ -10,11 +11,11 @@ function About() {
 
   return (
     <div>
-      <Helmet>
+      <SEO>
         <title>About Three Little Ladies Bakery</title>
         <meta
           name="description"
-          content="Learn more about Three Little Ladies Bakery and our story."
+          content="Contact Three Little Ladies Bakery to learn more about our story, passion for baking, and the delicious treats we create."
         />
         <meta
           name="keywords"
@@ -23,9 +24,14 @@ function About() {
         <meta property="og:title" content="About Three Little Ladies Bakery" />
         <meta
           property="og:description"
-          content="Learn more about Three Little Ladies Bakery and our story."
+          content="Learn more about Three Little Ladies Bakery and our passion for baking delicious treats."
         />
-      </Helmet>
+        <meta
+          property="og:url"
+          content="https://threelittlesistersbakery.com/about"
+        />
+        <meta property="og:site_name" content="Three Little Ladies Bakery" />
+      </SEO>
 
       <p>
         First, lets introduce the owner of Three Little Ladies Bakery, Lillian

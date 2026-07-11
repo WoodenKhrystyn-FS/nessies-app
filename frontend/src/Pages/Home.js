@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import SEO from "../Components/SEO";
 import { useNavigate } from "react-router-dom";
 import { trackEvent } from "../utils/analytics";
 import Gallery from "../Components/Gallery";
@@ -9,7 +10,7 @@ function Home() {
 
   return (
     <div className="home-container">
-      <Helmet>
+      <SEO>
         <title>Three Little Ladies Bakery</title>
         <meta
           name="description"
@@ -19,12 +20,15 @@ function Home() {
           name="keywords"
           content="bakery Indiana, fresh, homemade, treats, cookies, cupcakes, cakes"
         />
-        <meta property="og:title" content="Three Little Ladies Bakery" />
+        <meta
+          property="og:title"
+          content="Three Little Ladies Bakery | Freshly Baked Treats"
+        />
         <meta
           property="og:description"
-          content="Freshly baked goods made with love and passion."
+          content="Homemade treats for every occasion, including custom orders made fresh in Central Indiana."
         />
-      </Helmet>
+      </SEO>
       <section className="hero-section" style={homeStyles.heroSection}>
         <h1 className="welcome-message" style={homeStyles.welcomeMessage}>
           Welcome to Three Little Ladies Bakery
