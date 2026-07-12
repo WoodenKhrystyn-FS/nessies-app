@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Components/Navbar";
+import StructuredData from "./Components/StructuredData";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import OrderGoodies from "./Pages/OrderGoodie";
@@ -38,6 +39,7 @@ function App() {
         <div style={appStyles.backendMessage}>{backendMessage}</div>
       )}
 
+      <StructuredData />
       <Navbar />
 
       <main style={appStyles.main}>

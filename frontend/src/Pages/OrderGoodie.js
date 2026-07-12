@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 //import { Helmet } from "react-helmet-async";
 import SEO from "../Components/SEO";
 import GoodieCard from "../Components/GoodieCard";
-import GoodieForm from "../Components/GoodieForm";
 
 function OrderGoodies() {
   const [goodies, setGoodies] = useState([]);
