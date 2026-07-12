@@ -7,6 +7,15 @@ import Button from "../Components/Button";
 function Contact() {
   console.log("Contact page loaded");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    alert(
+      "Form submitted! Thank you for reaching out. We will get back to you soon.",
+    );
+    console.log("Form submitted");
+  };
+
   return (
     <div className="contact-container">
       <SEO>
@@ -77,22 +86,34 @@ function Contact() {
       </div>
 
       <form>
-        <label>First Name:</label>
+        <label htmlFor="firstName">First Name:</label>
         <input
+          id="firstName"
           aria-label="First Name"
           type="text"
           placeholder="Enter First Name"
         />
         <br />
-        <label>Surname:</label>
-        <input aria-label="Surname" type="text" placeholder="Enter Surname" />
+        <label htmlFor="surname">Surname:</label>
+        <input
+          id="surname"
+          aria-label="Surname"
+          type="text"
+          placeholder="Enter Surname"
+        />
         <br />
-        <label>Email:</label>
-        <input aria-label="Email" type="email" placeholder="Enter Email" />
+        <label htmlFor="email">Email:</label>
+        <input
+          id="email"
+          aria-label="Email"
+          type="email"
+          placeholder="Enter Email"
+        />
         <br />
 
-        <label>Message:</label>
+        <label htmlFor="message">Message:</label>
         <textarea
+          id="message"
           aria-label="Message"
           placeholder="Enter your message here..."
         ></textarea>
@@ -101,11 +122,7 @@ function Contact() {
 
       <Button
         aria-label="Submit Contact Form"
-        onClick={() =>
-          alert(
-            "Thank you for your message and we will get back to you within 24 hours!",
-          )
-        }
+        onClick={handleSubmit}
         text="Submit Contact Form"
       />
     </div>
