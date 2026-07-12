@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 
-const GoodieForm = () => {
+const GoodieForm = ({ goodie }) => {
   return (
     <div>
       <h2>Create A Goodie</h2>
@@ -48,23 +48,6 @@ const GoodieForm = () => {
           <option>12 inch</option>
         </select>
       </div>
-      {/* <div>
-        <label>Special Instructions:</label>
-        <br />
-        <textarea
-          rows="4"
-          cols="50"
-          placeholder="Enter any special instructions here..."
-        ></textarea>
-      </div> */}
-      {/* <div>
-        <label>Quantity:</label>
-        <input type="number" min="1" max="100" defaultValue="1" />
-      </div>
-      <div>
-        <label>Pickup Date:</label>
-        <input type="date" />
-      </div> */}
 
       <Button
         onClick={() => alert("Goodie form submitted!")}

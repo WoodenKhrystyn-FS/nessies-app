@@ -17,9 +17,9 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:5000/api/goodies")
       .then((res) => {
-        // if (!res.ok) {
-        //   throw new Error("Failed to connect to backend");
-        // }
+        if (!res.ok) {
+          throw new Error("Failed to connect to backend");
+        }
         return res.json();
       })
       .then((data) => {

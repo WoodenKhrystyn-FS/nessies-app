@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-//import { Helmet } from "react-helmet-async";
 import SEO from "../Components/SEO";
 import GoodieCard from "../Components/GoodieCard";
+import GoodieForm from "../Components/GoodieForm";
 
 function OrderGoodies() {
   const [goodies, setGoodies] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedGoodie, setSelectedGoodie] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -63,9 +64,10 @@ function OrderGoodies() {
 
       <div className="goodie-grid" style={gridStyles.goodieGrid}>
         {goodies.map((goodie) => (
-          <GoodieCard key={goodie.id} {...goodie} />
+          <GoodieCard key={goodie.id} {...goodie} onOrder={setSelectedGoodie} />
         ))}
       </div>
+      {selectedGoodie && <GoodieForm goodie={selectedGoodie} />}
     </div>
   );
 }

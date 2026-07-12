@@ -11,9 +11,9 @@ function GoodieCard({
   category = "Uncategorized",
   available = false,
   image,
+  onOrder,
 }) {
   const navigate = useNavigate();
-
   return (
     <div>
       <div className="goodie-card" style={cardStyles.GoodieCard}>
@@ -31,7 +31,12 @@ function GoodieCard({
         </p>
       </div>
 
-      <Button text="Checkout Goodies" onClick={() => navigate("/checkout")} />
+      <Button
+        text="Order Now"
+        onClick={() =>
+          onOrder({ id, name, price, description, category, image })
+        }
+      />
       <Button text="Add to Cart" onClick={() => navigate("/cart")} />
     </div>
   );
@@ -45,6 +50,7 @@ GoodieCard.propTypes = {
   category: PropTypes.string,
   available: PropTypes.bool,
   image: PropTypes.string,
+  onOrder: PropTypes.func,
 };
 
 export default GoodieCard;
