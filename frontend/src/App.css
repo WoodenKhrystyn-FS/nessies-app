@@ -9,6 +9,8 @@
   background-color: #282c34;
   height: 70px;
   font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,12 +84,16 @@ button {
   background-color: #4caf50;
   color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
   background-color: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 nav a {
@@ -102,12 +108,15 @@ nav a:hover {
 }
 
 .goodie-card {
-  transition: all 0.3s ease;
+  transition: 0.3s;
+  overflow: hidden;
+  border-radius: 14px;
 }
 
 .goodie-card:hover,
 .product-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
