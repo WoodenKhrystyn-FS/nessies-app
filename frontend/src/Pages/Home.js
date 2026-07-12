@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import SEO from "../Components/SEO";
 import { useNavigate } from "react-router-dom";
 import { trackEvent } from "../utils/analytics";
@@ -26,7 +25,7 @@ function Home() {
         />
         <meta
           property="og:description"
-          content="Homemade treats for every occasion, including custom orders made fresh in Central Indiana."
+          content="Family-owned bakery that serves delicious baked goods in Central Indiana."
         />
       </SEO>
       <section className="hero-section" style={homeStyles.heroSection}>
