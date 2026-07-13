@@ -1,29 +1,22 @@
-### Three Little Ladies Bakery
+### 🍰 Three Little Ladies Bakery
 
-Three Little Ladies Bakery is a full-stack web application designed for a local bakery in Indiana. The project provides customers with an easy way to browse baked goods, learn about the bakery and place custom orders. This application is being developed as a portfolio project for Full Saul University's Web Development program.
+A modern, responsive bakery website built as my Full Sail University Web Development Capstone Project. The application showcase homemade baked goods while providing customers with an intuitive way to browse products and submit customer order requests.
 
----
+## 🌐 Live Demo
 
-## Project Status:
-
-**Current Version:** Beta Development
-
-The application includes:
-
-- Responsie homepage
-- Bakery image gallery
-- Product catalog connected to a backend API
-- About Page
-- Contact Page
-- Navigation between pages
-- Ongoing UI/UX improvments
-- Security and dependency review
-
-Future releases will include customer ordering, shopping care functionality, checkout, authentication and administrator dashboard.
+**Website:** https://threelittleladiesbakery.netlify.app/
 
 ---
 
-## Features
+## Project Overview:
+
+Three Little Ladies Bakery is a full-stack web application designed to simulate the online present of a local family-owned bakery. The project emphasizes responsive design accessibility, search engine optimization(SEO), analytics integration and a clean user experience.
+
+**Note:** This is a mock/demo project created for educational purposes.
+
+---
+
+## ✨ Features
 
 - Browsed bakery products
 - Responsive React interface
@@ -36,12 +29,13 @@ Future releases will include customer ordering, shopping care functionality, che
 
 ---
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 ### Frontend
 
 - React
 - React Router
+- React Helmet Async
 - JavaScript (ES6+)
 - HTML5
 - CSS3
@@ -55,13 +49,46 @@ Future releases will include customer ordering, shopping care functionality, che
 
 - Git
 - GitHub
-- npm
-- ESLint
-- Figma
+- Netlify
+- Google Analytics 4 (GA4)
+- Visual Studio Code (VSCode)
 
 ---
 
-## Installation
+## 📈 SEO & Analytics
+
+The project includes professional SEO implementation includes:
+
+- Page-specific metadata
+- Dynamic page titles
+- Meta descriptions
+- Meta keywords
+- Open Graph tags
+- Canonical URLs
+- XML Sitemap
+- Robots.txt
+- Schema.org Bakery structured data
+- Google Analytics 4
+- Google Search Console
+
+---
+
+## ♿ Accessibility
+
+Accessibility improvements include:
+
+- Semantic HTML
+- Form labels
+- Aria labels
+- Keyboard-friendly navigation
+- Responsive layouts
+- Alt text for images
+- Improved focus states
+- Mobile-first design
+
+---
+
+### Install Dependencies
 
 Clone the repository:
 
@@ -95,21 +122,56 @@ npm start
 
 ---
 
-## Folder Structure
+## 📂 Project Folder Structure
 
 ```
-frontend/
-    src/
-        Components/
-        Pages/
-        IMAGES/
+nessies-app/
+│
+├── frontend/
+│   ├── src/
+│   │   ├── Components/
+│   │   ├── Pages/
+│   │   ├── utils/
+│   │   └── App.jsx
+│   └── public/
+│
+├── server/
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   └── index.js
+│
+└── docs/
+```
 
-server/
-    routes/
-    controllers/
-    models/
+---
 
-docs/
+### Clone the repository
+
+```bash
+git clone https://github.com/WoodenKhrystyn-FS/nessies-app.git
+```
+
+### Install dependencies
+
+Root
+
+```bash
+npm install
+```
+
+Frontend
+
+```bash
+cd frontend
+npm install
+```
+
+Server
+
+```bash
+cd ../server
+npm install
 ```
 
 ---
@@ -122,14 +184,26 @@ Figma Wireframe
 
 ---
 
-## Current Development Gaosl
+## 🧪 Current Development Status
 
-- Improved responsive design
-- Complete beta testing
-- Imrpove loading, blank and error states
-- Refactor reusable components
-- Reduct technical debt
-- Improve documentation
+**Sprint 1**
+
+- ✅ Google Analytics 4
+- ✅ Search Console
+- ✅ Robots.txt
+- ✅ XML Sitemap
+- ✅ SEO Component
+- ✅ Metadata
+- ✅ Netlify Deployment
+
+**Sprint 2**
+
+- ✅ Structured Data
+- 🔄 Accessibility Improvements
+- 🔄 UI/UX Polish
+- 🔄 Mobile Responsiveness
+- 🔄 Performance Optimization
+- 🔄 Beta Testing
 
 ---
 
@@ -146,12 +220,20 @@ Figma Wireframe
 
 ---
 
-## author
+## 👩‍💻 Author
 
 **Khrystyn Wooden**
 
 Web Development Student
 Full Sail University
+
+UX-Focused Full-Stack Web Developer
+
+Portfolio:
+https://khrystynwooden.netlify.app/
+
+LinkedIn:
+https://www.linkedin.com/in/khrystyn-wooden-b23212176/
 
 GitHub:
 https://github.com/WoodenKhrystyn-FS
@@ -160,4 +242,4 @@ https://github.com/WoodenKhrystyn-FS
 
 ## License
 
-This project is intended for education and portfolio purposes.
+This project was cerated as part of the Full Sail Web Development Bachelor's Degree Capstone and is intended for educational and portfolio purposes.
