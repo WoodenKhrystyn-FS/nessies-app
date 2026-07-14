@@ -1,0 +1,36 @@
+$kind: http-request
+name: Create Order
+method: POST
+url: '{{baseUrl}}/api/goodies'
+description: 'Create a new goodie order.'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Red Velvet Cupcake",
+      "price": 3.00,
+      "description": "Moist red velvet cupcake with cream cheese frosting.",
+      "category": "cupcakes",
+      "available": true
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 200", function () {
+        pm.response.to.have.status(200);
+      });
+
+      pm.test("Response has message and goodie", function () {
+        const json = pm.response.json();
+        pm.expect(json).to.have.property("message");
+        pm.expect(json).to.have.property("goodie");
+      });
+
+      pm.test("Response time is under 1000ms", function () {
+        pm.expect(pm.response.responseTime).to.be.below(1000);
+      });

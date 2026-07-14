@@ -1,0 +1,36 @@
+$kind: http-request
+name: Create Customer
+method: POST
+url: '{{baseUrl}}/api/goodies'
+description: 'Add a new goodie (customers view).'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Vanilla Cake",
+      "price": 15.00,
+      "description": "Classic vanilla cake with buttercream frosting.",
+      "category": "cakes",
+      "available": true
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 200", function () {
+        pm.response.to.have.status(200);
+      });
+
+      pm.test("Response has message and goodie", function () {
+        const json = pm.response.json();
+        pm.expect(json).to.have.property("message");
+        pm.expect(json).to.have.property("goodie");
+      });
+
+      pm.test("Response time is under 1000ms", function () {
+        pm.expect(pm.response.responseTime).to.be.below(1000);
+      });

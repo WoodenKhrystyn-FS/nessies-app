@@ -1,0 +1,15 @@
+$kind: collection
+name: Goodies API
+description: 'API collection for Three Little Ladies Bakery - manage products, orders, and customers.'
+variables:
+  - key: baseUrl
+    value: 'http://localhost:5000'
+    description: 'Base URL for the Goodies API'
+  - key: authToken
+    value: ''
+    description: 'Bearer token for authentication'
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{authToken}}'

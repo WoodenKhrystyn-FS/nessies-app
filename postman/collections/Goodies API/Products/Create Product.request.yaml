@@ -1,0 +1,48 @@
+$kind: http-request
+name: Create Product
+method: POST
+url: '{{baseUrl}}/api/goodies'
+description: 'Add a new bakery goodie.'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Chocolate Chip Cookie",
+      "price": 2.50,
+      "description": "Classic chocolate chip cookie baked fresh daily.",
+      "category": "cookies",
+      "available": true
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 200", function () {
+        pm.response.to.have.status(200);
+      });
+
+      pm.test("Response has message and goodie", function () {
+        const json = pm.response.json();
+        pm.expect(json).to.have.property("message");
+        pm.expect(json).to.have.property("goodie");
+      });
+
+      pm.test("Goodie has id, name, and price", function () {
+        const goodie = pm.response.json().goodie;
+        pm.expect(goodie).to.have.property("id");
+        pm.expect(goodie).to.have.property("name");
+        pm.expect(goodie).to.have.property("price");
+      });
+
+      pm.test("Response time is under 1000ms", function () {
+        pm.expect(pm.response.responseTime).to.be.below(1000);
+      });
+
+      const json = pm.response.json();
+      if (json.goodie && json.goodie.id) {
+        pm.collectionVariables.set("goodieId", json.goodie.id);
+      }

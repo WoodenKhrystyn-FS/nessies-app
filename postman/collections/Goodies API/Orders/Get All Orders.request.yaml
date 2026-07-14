@@ -1,0 +1,21 @@
+$kind: http-request
+name: Get All Orders
+method: GET
+url: '{{baseUrl}}/api/goodies'
+description: 'Retrieve all goodies (orders view).'
+order: 1000
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 200", function () {
+        pm.response.to.have.status(200);
+      });
+
+      pm.test("Response is an array", function () {
+        pm.expect(pm.response.json()).to.be.an("array");
+      });
+
+      pm.test("Response time is under 1000ms", function () {
+        pm.expect(pm.response.responseTime).to.be.below(1000);
+      });

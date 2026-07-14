@@ -1,0 +1,31 @@
+$kind: http-request
+name: Update Order Status
+method: PUT
+url: '{{baseUrl}}/api/goodies/:id'
+description: 'Update a goodie order by ID.'
+order: 4000
+pathVariables:
+  - key: id
+    value: '1'
+    description: 'The goodie ID'
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Red Velvet Cupcake (Updated)",
+      "price": 3.25
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 200 or 404", function () {
+        pm.expect(pm.response.code).to.be.oneOf([200, 404]);
+      });
+
+      pm.test("Response time is under 1000ms", function () {
+        pm.expect(pm.response.responseTime).to.be.below(1000);
+      });

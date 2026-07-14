@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import SEO from "../Components/SEO";
 import GoodieCard from "../Components/GoodieCard";
 import GoodieForm from "../Components/GoodieForm";
+import API_BASE_URL from "../utils/api";
 
 function OrderGoodies() {
   const [goodies, setGoodies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedGoodie, setSelectedGoodie] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/goodies")
+    fetch(`${API_BASE_URL}/api/goodies`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch goodies");
@@ -23,19 +24,31 @@ function OrderGoodies() {
       })
       .catch((err) => {
         console.error("Error in fetching goodies:", err);
-        setError(err);
+        setError(
+          "We're having trouble fetching goodies. Please try again later.",
+        );
         setLoading(false);
       });
   }, []);
 
-  if (loading) {
-    return <div>Loading goodies...</div>;
-  }
-  if (error) {
-    return <h2>Error: {error.message}</h2>;
-  }
   if (!loading && goodies.length === 0) {
-    return <h2>No goodies available at the moment.</h2>;
+    return (
+      <div>
+        <h2>No goodies available today.</h2>
+        <p>Please check back later!</p>
+      </div>
+    );
+  }
+  if (loading) {
+    return <h2>Loading goodies...</h2>;
+  }
+
+  if (error) {
+    return (
+      <div>
+        <h2 className="error">{error}</h2>
+      </div>
+    );
   }
 
   return (
