@@ -9,6 +9,7 @@ function OrderGoodies() {
   const [loading, setLoading] = useState(true);
   const [selectedGoodie, setSelectedGoodie] = useState(null);
   const [error, setError] = useState("");
+  const formRef = React.useRef(null);
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/goodies`)
@@ -31,22 +32,27 @@ function OrderGoodies() {
       });
   }, []);
 
-  if (!loading && goodies.length === 0) {
+  if (loading) {
     return (
       <div>
-        <h2>No goodies available today.</h2>
-        <p>Please check back later!</p>
+        <h2>Preparing today's goodies...</h2>
+        <p>Please wait while we prepare your favorites!</p>
       </div>
     );
-  }
-  if (loading) {
-    return <h2>Loading goodies...</h2>;
   }
 
   if (error) {
     return (
       <div>
         <h2 className="error">{error}</h2>
+      </div>
+    );
+  }
+  if (!loading && goodies.length === 0) {
+    return (
+      <div>
+        <h2>No goodies available today.</h2>
+        <p>Please check back later!</p>
       </div>
     );
   }
@@ -73,17 +79,38 @@ function OrderGoodies() {
         />
       </SEO>
 
-      <p>Choose from items below!</p>
+      <h1>Order Freshly Baked Goodies!</h1>
 
-      <div className="goodie-grid" style={gridStyles.goodieGrid}>
-        {goodies.map((goodie) => (
-          <GoodieCard
-            key={goodie.id}
-            goodie={goodie}
-            onOrder={setSelectedGoodie}
-          />
-        ))}
-      </div>
+      <p>
+        Browse our selection of freshly baked goodies and start a custom order!
+      </p>
+
+      <section className="order-page">
+        <h1>Available Goodies</h1>
+
+        <p>Browse our selection of freshly baked goodies</p>
+        <div className="goodie-grid" style={gridStyles.goodieGrid}>
+          {goodies.map((goodie) => (
+            <GoodieCard
+              key={goodie.id}
+              goodie={goodie}
+              onOrder={(goodie) => {
+                setSelectedGoodie(goodie);
+
+                setTimeout(() => {
+                  formRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }, 100);
+              }}
+            />
+          ))}
+        </div>
+        <div ref={formRef}>
+          {selectedGoodie && <GoodieForm goodie={selectedGoodie} />}
+        </div>
+      </section>
+
       {selectedGoodie && <GoodieForm goodie={selectedGoodie} />}
     </div>
   );

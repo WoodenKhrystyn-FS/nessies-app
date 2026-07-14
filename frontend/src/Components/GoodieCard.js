@@ -1,76 +1,72 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
-function GoodieCard({
-  id = 0,
-  name = "Unknown Goodie",
-  price = 0,
-  description = "No description available",
-  category = "Uncategorized",
-  available = false,
-  image,
-  onOrder,
-  goodie = { id, name, price, description, category, available, image },
-}) {
-  const navigate = useNavigate();
+function GoodieCard({ onOrder, goodie }) {
+  const { id, name, price, description, category, available, image } = goodie;
   return (
     <div>
       <div className="goodie-card" style={cardStyles.GoodieCard}>
         <img
-          src={goodie.image || "/Logo.png"}
-          alt={goodie.name || "Bakery Goodie"}
+          src={image || "/Logo.png"}
+          alt={name || "Bakery Goodie"}
           style={cardStyles.image}
         />
-        <div>
+        <div style={{ padding: "0.5rem" }}>
           <h3>{name}</h3>
           <p style={cardStyles.price}>
-            Price: ${(Number(goodie.price) || 0).toFixed(2)}
+            Price: ${(Number(price) || 0).toFixed(2)}
           </p>
           <p style={cardStyles.description}>{description}</p>
         </div>
         <p style={cardStyles.category}>Category: {category}</p>
-        <p style={cardStyles.availability}>
-          {available ? "Available" : "Out of Stock"}
+        <p
+          className={available ? "available" : "unavailable"}
+          style={{
+            ...cardStyles.availability,
+            color: available ? "green" : "red",
+          }}
+        >
+          {available ? "Fresh Today" : "Sold Out"}
         </p>
       </div>
 
-      <Button
-        text="Order Now"
-        onClick={() =>
-          onOrder({ id, name, price, description, category, image })
-        }
-      />
-      <Button text="Add to Cart" onClick={() => navigate("/cart")} />
+      <Button text="Customize & Order" onClick={() => onOrder(goodie)} />
     </div>
   );
 }
 
 GoodieCard.propTypes = {
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  description: PropTypes.string,
-  category: PropTypes.string,
-  available: PropTypes.bool,
-  image: PropTypes.string,
-  onOrder: PropTypes.func,
+  goodie: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    description: PropTypes.string,
+    category: PropTypes.string,
+    available: PropTypes.bool,
+    image: PropTypes.string,
+    onOrder: PropTypes.func,
+  }).isRequired,
+  onOrder: PropTypes.func.isRequired,
 };
 
 export default GoodieCard;
 
 const cardStyles = {
   GoodieCard: {
-    background: "#fff",
-    borderRadius: "14px",
-    overflow: "hidden",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    transition: "transform 0.2s",
+    boxShadow: "0 8px 24px rgba(0, 0, 0, 0.12)",
+    padding: "1rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    height: "100%",
   },
   image: {
-    width: "200px",
-    height: "180px",
+    width: "100%",
+    height: "220px",
+    objectFit: "cover",
+    borderTopLeftRadius: "14px",
+    borderTopRightRadius: "14px",
   },
   price: {
     fontWeight: "bold",
