@@ -12,16 +12,21 @@ function GoodieCard({
   available = false,
   image,
   onOrder,
+  goodie = { id, name, price, description, category, available, image },
 }) {
   const navigate = useNavigate();
   return (
     <div>
       <div className="goodie-card" style={cardStyles.GoodieCard}>
-        <img src={image} alt={name} style={cardStyles.image} />
+        <img
+          src={goodie.image || "/Logo.png"}
+          alt={goodie.name || "Bakery Goodie"}
+          style={cardStyles.image}
+        />
         <div>
           <h3>{name}</h3>
           <p style={cardStyles.price}>
-            Price: ${(Number(price) || 0).toFixed(2)}
+            Price: ${(Number(goodie.price) || 0).toFixed(2)}
           </p>
           <p style={cardStyles.description}>{description}</p>
         </div>

@@ -77,7 +77,11 @@ function OrderGoodies() {
 
       <div className="goodie-grid" style={gridStyles.goodieGrid}>
         {goodies.map((goodie) => (
-          <GoodieCard key={goodie.id} {...goodie} onOrder={setSelectedGoodie} />
+          <GoodieCard
+            key={goodie.id}
+            goodie={goodie}
+            onOrder={setSelectedGoodie}
+          />
         ))}
       </div>
       {selectedGoodie && <GoodieForm goodie={selectedGoodie} />}
