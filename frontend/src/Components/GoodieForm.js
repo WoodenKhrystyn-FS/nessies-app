@@ -27,6 +27,7 @@ const GoodieForm = ({ goodie }) => {
       ...formData,
       customerName: "",
       customerEmail: "",
+      customerPhone: "",
       treatType: "",
       flavor: "",
       frosting: "",
@@ -38,6 +39,7 @@ const GoodieForm = ({ goodie }) => {
 
   return (
     <div className="goodie-form">
+      <h3>Customer Information</h3>
       <label>Name</label>
       <form>
         <input
@@ -71,17 +73,29 @@ const GoodieForm = ({ goodie }) => {
           }
         />
       </form>
-      <h2>Request Your Custom Order</h2>
-      <img
-        src={goodie.image || "/Logo.png"}
-        alt={goodie.name}
-        className="goodie-preview"
-      />
-      <h3>{goodie.name}</h3>
-      <p>
-        <strong> Starting Price:</strong>$ $
-        {(Number(goodie.price) || 0).toFixed(2)}
+      <h2>Customize Your Order</h2>
+
+      <p className="form-subtitle">
+        Complete the form below and we' ll contact you within 24-48 hours to
+        confirm your customer bakery order
       </p>
+      <div>
+        <img
+          src={goodie.image || "/Logo.png"}
+          alt={goodie.name}
+          className="goodie-preview"
+        />
+      </div>
+      <div>
+        <h3>{goodie.name}</h3>
+        <p>{goodie.description}</p>
+        <p>
+          <strong> Starting Price:</strong>$ $
+          {(Number(goodie.price) || 0).toFixed(2)}
+        </p>
+      </div>
+
+      <h3>Order Details</h3>
       <label>Treat Type</label>
       <select
         value={formData.treatType}
@@ -90,13 +104,13 @@ const GoodieForm = ({ goodie }) => {
           setFormData({ ...formData, treatType: e.target.value })
         }
       >
-        Treat Type:
-        <option>--Choose an Treat--</option>
+        Dessert Type:
+        <option>--Choose Treat--</option>
         <option>Cupcakes</option>
         <option>Cookies</option>
         <option>Cakes</option>
         <option>Brownies</option>
-        <option>Bread</option>
+        <option>Breakfast</option>
       </select>
 
       <label>Flavor</label>
@@ -106,7 +120,7 @@ const GoodieForm = ({ goodie }) => {
         onChange={(e) => setFormData({ ...formData, flavor: e.target.value })}
       >
         Flavor:
-        <option>--Choose an Cake--</option>
+        <option>--Choose Flavor--</option>
         <option>Vanilla</option>
         <option>Chocolate</option>
         <option>Red Velvet</option>
@@ -114,14 +128,14 @@ const GoodieForm = ({ goodie }) => {
         <option>Carrot</option>
       </select>
 
-      <label>Frosting</label>
+      <label>Frosting Choice</label>
       <select
         value={formData.frosting}
         required
         onChange={(e) => setFormData({ ...formData, frosting: e.target.value })}
       >
         Frosting:
-        <option>--Choose a Frosting--</option>
+        <option>--Choose Frosting--</option>
         <option>Vanilla Buttercream</option>
         <option>Chocolate Ganache</option>
         <option>Cream Cheese</option>
@@ -129,7 +143,7 @@ const GoodieForm = ({ goodie }) => {
         <option>Strawberry Frosting</option>
       </select>
 
-      <label>Quantity</label>
+      <label>Quantity Needed</label>
       <div className="quantity">
         <input
           type="number"
@@ -141,7 +155,7 @@ const GoodieForm = ({ goodie }) => {
         />
       </div>
 
-      <label>Pickup Date</label>
+      <label>Preferred Pickup Date</label>
       <input
         type="date"
         required

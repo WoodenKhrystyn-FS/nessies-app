@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const goodiesRoutes = require("./routes/goodies");
 const app = express();
-const PORT = 5000;
+const PORT = 3000;
 
 //Middleware
 app.use(express.json());

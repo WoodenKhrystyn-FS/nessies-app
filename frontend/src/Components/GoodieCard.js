@@ -14,12 +14,15 @@ function GoodieCard({ onOrder, goodie }) {
         />
         <div style={{ padding: "0.5rem" }}>
           <h3>{name}</h3>
+          <div style={cardStyles.rating}>⭐⭐⭐⭐⭐ Custom Favorite</div>
           <p style={cardStyles.price}>
             Price: ${(Number(price) || 0).toFixed(2)}
           </p>
           <p style={cardStyles.description}>{description}</p>
         </div>
-        <p style={cardStyles.category}>Category: {category}</p>
+        <p style={cardStyles.category}>
+          <span className="badge">{category}</span>
+        </p>
         <p
           className={available ? "available" : "unavailable"}
           style={{
@@ -27,7 +30,7 @@ function GoodieCard({ onOrder, goodie }) {
             color: available ? "green" : "red",
           }}
         >
-          {available ? "Fresh Today" : "Sold Out"}
+          {available ? "🧁 Made Fresh" : "Sold Out"}
         </p>
       </div>
 
@@ -81,5 +84,20 @@ const cardStyles = {
   availability: {
     fontWeight: "bold",
     color: "green",
+  },
+  rating: {
+    color: "#D9A066",
+    fontWeight: "600",
+    marginBottom: "10px",
+  },
+  badge: {
+    display: "inline-block",
+    background: "#F5E7D0",
+    color: "#6B4226",
+    padding: "6px 12xp",
+    borderRadius: "20px",
+    fontSize: "0.8rem",
+    fontWeight: "600",
+    marginTop: "10px",
   },
 };

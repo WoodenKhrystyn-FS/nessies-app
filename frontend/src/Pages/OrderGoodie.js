@@ -8,6 +8,7 @@ function OrderGoodies() {
   const [goodies, setGoodies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedGoodie, setSelectedGoodie] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [error, setError] = useState("");
   const formRef = React.useRef(null);
 
@@ -57,6 +58,11 @@ function OrderGoodies() {
     );
   }
 
+  const filteredGoodies =
+    selectedCategory === "All"
+      ? goodies
+      : goodies.filter((goodie) => goodie.category === selectedCategory);
+
   return (
     <div>
       <SEO>
@@ -89,8 +95,33 @@ function OrderGoodies() {
         <h1>Available Goodies</h1>
 
         <p>Browse our selection of freshly baked goodies</p>
+        <div className="category-filters" style={gridStyles.filters}>
+          {[
+            "All",
+            "Cakes",
+            "Cupcakes",
+            "Cookies",
+            "Brownies",
+            "Breakfast",
+            "Desserts",
+          ].map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              style={{
+                ...gridStyles.filterButton,
+                backgroundColor:
+                  selectedCategory === category ? "#d9a066" : "#fff",
+                color: selectedCategory === category ? "#fff" : "#333",
+              }}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
         <div className="goodie-grid" style={gridStyles.goodieGrid}>
-          {goodies.map((goodie) => (
+          {filteredGoodies.map((goodie) => (
             <GoodieCard
               key={goodie.id}
               goodie={goodie}
@@ -110,8 +141,6 @@ function OrderGoodies() {
           {selectedGoodie && <GoodieForm goodie={selectedGoodie} />}
         </div>
       </section>
-
-      {selectedGoodie && <GoodieForm goodie={selectedGoodie} />}
     </div>
   );
 }
@@ -123,5 +152,19 @@ const gridStyles = {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
     gap: "20px",
+  },
+  filters: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    gap: "12px",
+    margin: "20px 0",
+  },
+  filterButton: {
+    padding: "10px 18px",
+    borderRadius: "30px",
+    border: "1px solid #d9a066",
+    cursor: "pointer",
+    transition: "0.3s ease",
   },
 };
