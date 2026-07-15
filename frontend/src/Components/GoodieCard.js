@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
+import "../Styles/OrderGoodies.css";
 
 function GoodieCard({ onOrder, goodie }) {
   const { id, name, price, description, category, available, image } = goodie;

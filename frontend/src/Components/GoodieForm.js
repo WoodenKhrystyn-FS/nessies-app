@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
+import "../Styles/OrderGoodies.css";
 
 const GoodieForm = ({ goodie }) => {
   const [formData, setFormData] = useState({
@@ -38,8 +39,8 @@ const GoodieForm = ({ goodie }) => {
   };
 
   return (
-    <div className="goodie-form">
-      <h3>Customer Information</h3>
+    <div className="goodie-form-card">
+      <h3 className="section-title">Customer Information</h3>
       <label>Name</label>
       <form>
         <input

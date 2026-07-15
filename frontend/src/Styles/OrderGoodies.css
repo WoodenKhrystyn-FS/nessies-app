@@ -1,0 +1,148 @@
+.order-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.order-header h1 {
+  font-size: 2.5rem;
+  color: #6b4226;
+  margin-bottom: 15px;
+}
+
+.order-header p {
+  color: #555;
+  line-height: 1.7;
+}
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.category-filters button {
+  border: none;
+  border-radius: 40px;
+  padding: 12px 24px;
+  cursor: pointer;
+  background: #f4efe9;
+  color: #6b4226;
+  transition: all 0.25s ease;
+}
+
+.category-filters button:hover {
+  background: #d9a066;
+  color: white;
+}
+
+.category-filters button.active {
+  background: #6b4226;
+  color: white;
+}
+
+.goodie-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.goodie-card:hover {
+  transform: translateY(-8px);
+}
+
+.goodie-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.goodie-card-content {
+  padding: 20px;
+}
+
+.goodie-card h3 {
+  font-size: 1.4rem;
+  color: #6b4226;
+}
+
+.price {
+  color: #d48b2c;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.description {
+  margin: 15px 0;
+  color: #555;
+}
+.category-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #f9e5c5;
+  border-radius: 40px;
+  font-weight: bold;
+  color: #7a4f2d;
+}
+
+.available {
+  color: #2d9b55;
+  font-weight: bold;
+}
+
+.unavailable {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+.order-button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.goodie-form-card {
+  background: white;
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  color: #6b4226;
+  margin-top: 30px;
+}
+
+.goodie-form input,
+.goodie-form select,
+.goodie-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.goodie-form input:focus,
+.goodie-form select:focus,
+.goodie-form textarea:focus {
+  outline: none;
+  border-color: #d9a066;
+}
+
+.goodie-preview {
+  display: block;
+  margin: auto;
+  width: 260px;
+  border-radius: 15px;
+}
+
+.selected-goodie {
+  text-align: center;
+}

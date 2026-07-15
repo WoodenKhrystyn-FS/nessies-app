@@ -115,7 +115,7 @@ nav a:hover {
   padding: 2rem;
 }
 
-.goodie-card {
+/* .goodie-card {
   transition: 0.3s;
   overflow: hidden;
   border-radius: 14px;
@@ -151,7 +151,7 @@ nav a:hover {
   width: 100%;
   box-sizing: border-box;
   font-size: 16px;
-}
+} */
 
 .goodie-preview {
   display: flex;

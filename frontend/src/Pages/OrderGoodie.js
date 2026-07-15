@@ -3,6 +3,7 @@ import SEO from "../Components/SEO";
 import GoodieCard from "../Components/GoodieCard";
 import GoodieForm from "../Components/GoodieForm";
 import API_BASE_URL from "../utils/api";
+import "../Styles/OrderGoodies.css";
 
 function OrderGoodies() {
   const [goodies, setGoodies] = useState([]);
@@ -84,12 +85,15 @@ function OrderGoodies() {
           content="Order freshly baked goodies from Three Little Ladies Bakery, including cupcakes, cookies, and cakes."
         />
       </SEO>
+      <div className="order-header">
+        <h1>Order Your Favorite Bakery Treats!</h1>
 
-      <h1>Order Freshly Baked Goodies!</h1>
-
-      <p>
-        Browse our selection of freshly baked goodies and start a custom order!
-      </p>
+        <p>
+          Browse our homeamde bakery favorites and customize a perfect dessert.
+          Whether you're celebrating a birthday, baby shower, wedding or just
+          simply have a sweet tooth, we're ready to bake for you!
+        </p>
+      </div>
 
       <section className="order-page">
         <h1>Available Goodies</h1>

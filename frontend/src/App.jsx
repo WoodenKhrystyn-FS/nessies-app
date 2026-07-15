@@ -15,7 +15,7 @@ function App() {
   const [backendMessage, setBackendMessage] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/goodies")
+    fetch("http://localhost:5000/api/goodies")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to connect to backend");
