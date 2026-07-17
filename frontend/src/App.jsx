@@ -1,4 +1,5 @@
 import React from "react";
+import API_BASE_URL from "./utils/api";
 import Navbar from "./Components/Navbar";
 import StructuredData from "./Components/StructuredData";
 import Home from "./Pages/Home";
@@ -9,35 +10,11 @@ import { Routes, Route } from "react-router-dom";
 import Footer from "./Components/Footer";
 
 import "./App.css";
-import { useEffect, useState } from "react";
 
 function App() {
-  const [backendMessage, setBackendMessage] = useState(null);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/api/goodies")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to connect to backend");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setBackendMessage(`Loaded ${data.length} goodies`);
-      })
-      .catch((err) => {
-        console.error(err);
-        setBackendMessage("Backend unavailable");
-      });
-  }, []);
-
   return (
     <div style={appStyles.AppGrid}>
       <header style={appStyles.Header}>Three Little Ladies Bakery</header>
-      {backendMessage && (
-        <div style={appStyles.backendMessage}>{backendMessage}</div>
-      )}
 
       <StructuredData />
       <Navbar />

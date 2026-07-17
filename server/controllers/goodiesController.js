@@ -32,7 +32,7 @@ let goodies = [
     description: "Rich and fudgy brownies perfect for parties and gatherings",
     category: "Brownie",
     available: true,
-    image: "/Logo.png",
+    image: "/",
   },
   {
     id: 4,
@@ -61,7 +61,7 @@ let goodies = [
     description: "Classic chocolate chip cookies freshly baked by the dozen",
     category: "Cookie",
     available: true,
-    image: "/Logo.png",
+    image: "../IMAGES/ChocolateChipCookies.webp",
   },
   {
     id: 7,
