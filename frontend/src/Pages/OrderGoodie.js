@@ -9,7 +9,7 @@ function OrderGoodies() {
   const [goodies, setGoodies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedGoodie, setSelectedGoodie] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [error, setError] = useState("");
   const formRef = React.useRef(null);
 
@@ -36,25 +36,29 @@ function OrderGoodies() {
 
   if (loading) {
     return (
-      <div>
-        <h2>Preparing today's goodies...</h2>
-        <p>Please wait while we prepare your favorites!</p>
+      <div className="loading-state">
+        <h2>🍰 Fresh treats are coming out of the oven...</h2>
+        <p>Loading today's available bakery favorites.</p>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div>
-        <h2 className="error">{error}</h2>
+      <div className="error-state">
+        <h2>Oops!</h2>
+
+        <p>{error}</p>
+
+        <button onClick={() => window.location.reload()}>Try Again</button>
       </div>
     );
   }
   if (!loading && goodies.length === 0) {
     return (
-      <div>
-        <h2>No goodies available today.</h2>
-        <p>Please check back later!</p>
+      <div className="empty-state">
+        <h2>🍪 Our display case is empty right now!</h2>
+        <p>Please check back soon for freshly baked goodies.</p>
       </div>
     );
   }
@@ -86,28 +90,32 @@ function OrderGoodies() {
         />
       </SEO>
       <div className="order-header">
-        <h1>Order Your Favorite Bakery Treats!</h1>
+        <h1>Freshly Baked Just for You!</h1>
 
         <p>
-          Browse our homeamde bakery favorites and customize a perfect dessert.
+          Browse our homemade bakery favorites and customize a perfect dessert.
           Whether you're celebrating a birthday, baby shower, wedding or just
           simply have a sweet tooth, we're ready to bake for you!
+        </p>
+
+        <p className="order-subtitle">
+          Select a bakery item below to begin your custom order requests
         </p>
       </div>
 
       <section className="order-page">
-        <h1>Available Goodies</h1>
+        <h1>Browse our Bakery Favorites</h1>
 
-        <p>Browse our selection of freshly baked goodies</p>
+        <p>Choose one of our featured desserts to begin custom order.</p>
         <div className="category-filters" style={gridStyles.filters}>
           {[
             "All",
-            "Cakes",
-            "Cupcakes",
-            "Cookies",
-            "Brownies",
-            "Breakfast",
-            "Desserts",
+            "🍰 Cakes",
+            "🧁 Cupcakes",
+            "🍪 Cookies",
+            "🍫 Brownies",
+            "🥐 Breakfast",
+            "🍮 Desserts",
           ].map((category) => (
             <button
               key={category}
@@ -141,8 +149,17 @@ function OrderGoodies() {
             />
           ))}
         </div>
-        <div ref={formRef}>
-          {selectedGoodie && <GoodieForm goodie={selectedGoodie} />}
+        <div
+          ref={formRef}
+          className={selectedGoodie ? "form-visible" : "form-hidden"}
+        >
+          {selectedGoodie && (
+            <>
+              <hr className="order-divider" />
+              <h2 className="customer-order-title">Customize Your Order</h2>
+              <GoodieForm goodie={selectedGoodie} />
+            </>
+          )}
         </div>
       </section>
     </div>
@@ -154,7 +171,7 @@ export default OrderGoodies;
 const gridStyles = {
   goodieGrid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
     gap: "20px",
   },
   filters: {
