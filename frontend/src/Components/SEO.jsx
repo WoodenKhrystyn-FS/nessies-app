@@ -5,7 +5,7 @@ function SEO({
   description,
   keywords,
   image = "/Logo.png",
-  url = "https://threelittlesistersbakery.com",
+  url = "https://www.threelittleladiesbakery.netlify.app",
 }) {
   return (
     <Helmet>

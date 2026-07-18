@@ -6,6 +6,8 @@ A modern, responsive bakery website built as my Full Sail University Web Develop
 
 **Website:** https://threelittleladiesbakery.netlify.app/
 
+[![alt text](<Screenshot 2026-07-17 at 1.46.16 PM.png>)]
+
 ---
 
 ## Project Overview:

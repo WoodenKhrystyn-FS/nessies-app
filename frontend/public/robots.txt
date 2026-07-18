@@ -1,5 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Allows: /
+Allow: /
 Sitemap: http://threelittleladiesbakery.netlify.app/sitemap.xml
 Disallow:

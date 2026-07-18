@@ -24,7 +24,7 @@ const GoodieForm = ({ goodie }) => {
 
   if (submitted) {
     return (
-      <div className="order-success">
+      <div className="order-success" role="status" aria-live="polite">
         <h2>Thank You!</h2>
 
         <p>Your order request has been received.</p>
@@ -54,7 +54,7 @@ const GoodieForm = ({ goodie }) => {
     );
   }
 
-  const confirmForm = () => {
+  const validateForm = () => {
     const newErrors = {};
 
     if (!formData.customerName.trim()) {
@@ -69,7 +69,7 @@ const GoodieForm = ({ goodie }) => {
 
     if (!formData.customerPhone.trim()) {
       newErrors.customerPhone = "Phone number is required";
-    } else if (!/^\d{10}$/.test(formData.customerEmail)) {
+    } else if (!/^\d{10}$/.test(formData.customerPhone)) {
       newErrors.customerPhone = "Please enter a 10 digit phone number.";
     }
 
@@ -85,7 +85,7 @@ const GoodieForm = ({ goodie }) => {
       newErrors.frosting = "Please select a frosting";
     }
 
-    if (!formData.quantity < 1 || formData.quantity > 24) {
+    if (formData.quantity < 1 || formData.quantity > 24) {
       newErrors.quantity = "Quantity must be between 1 and 24";
     }
 
@@ -99,7 +99,7 @@ const GoodieForm = ({ goodie }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const validationErrors = confirmForm();
+    const validationErrors = validateForm();
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -117,54 +117,61 @@ const GoodieForm = ({ goodie }) => {
   };
 
   return (
-    <div className="goodie-form-card">
+    <form className=" goodie-form goodie-form-card">
       <h3 className="section-title">Customer Information</h3>
       <section>
-        <label>Name</label>
-        <form>
-          <input
-            type="text"
-            required
-            value={formData.customerName}
-            onChange={(e) =>
-              setFormData({ ...formData, customerName: e.target.value })
-            }
-          />
-          {errors.customerName && (
-            <p className="form-error">{errors.customerName}</p>
-          )}
-        </form>
-        <label>Email</label>
-        <form>
-          <input
-            type="email"
-            required
-            placeholder="name@email.com"
-            value={formData.customerEmail}
-            onChange={(e) =>
-              setFormData({ ...formData, customerEmail: e.target.value })
-            }
-          />
-          {errors.customerEmail && (
-            <p className="form-error">{errors.customerEmail}</p>
-          )}
-        </form>
-        <label>Phone</label>
-        <form>
-          <input
-            type="tel"
-            required
-            pattern="[0-9]{10}"
-            placeholder="3172345678"
-            value={formData.customerPhone}
-            onChange={(e) =>
-              setFormData({ ...formData, customerPhone: e.target.value })
-            }
-          />
-          {errors.customerPhone && (
-            <p className="form-error">{errors.customerPhone}</p>
-          )}
-        </form>
+        <label htmlFor="customerName">Name</label>
+
+        <input
+          type="text"
+          id="customerName"
+          name="customerName"
+          required
+          value={formData.customerName}
+          onChange={(e) =>
+            setFormData({ ...formData, customerName: e.target.value })
+          }
+        />
+        {errors.customerName && (
+          <p className="form-error">{errors.customerName}</p>
+        )}
+
+        <label htmlFor="customerEmail">Email</label>
+
+        <input
+          type="email"
+          id="customerEmail"
+          name="customerEmail"
+          required
+          placeholder="name@email.com"
+          value={formData.customerEmail}
+          onChange={(e) =>
+            setFormData({ ...formData, customerEmail: e.target.value })
+          }
+        />
+        {errors.customerEmail && (
+          <p className="form-error" aria-live="polite">
+            {errors.customerEmail}
+          </p>
+        )}
+
+        <label htmlFor="customerPhone">Phone</label>
+
+        <input
+          type="tel"
+          required
+          id="customerPhone"
+          name="customerPhone"
+          pattern="[0-9]{10}"
+          placeholder="3172345678"
+          value={formData.customerPhone}
+          onChange={(e) =>
+            setFormData({ ...formData, customerPhone: e.target.value })
+          }
+        />
+        {errors.customerPhone && (
+          <p className="form-error">{errors.customerPhone}</p>
+        )}
       </section>
 
       <h2>Customize Your Order</h2>
@@ -176,7 +183,7 @@ const GoodieForm = ({ goodie }) => {
       <div>
         <img
           src={goodie.image || "/Logo.png"}
-          alt={goodie.name}
+          alt={`${goodie.name} bakery item`}
           className="goodie-preview"
         />
       </div>
@@ -191,15 +198,16 @@ const GoodieForm = ({ goodie }) => {
 
       <section>
         <h3>Order Details</h3>
-        <label>Treat Type</label>
+        <label htmlFor="treatType">Treat Type</label>
         <select
+          id="treatType"
+          name="treatType"
           value={formData.treatType}
           required
           onChange={(e) =>
             setFormData({ ...formData, treatType: e.target.value })
           }
         >
-          {errors.treatType && <p className="form-error">{errors.treatType}</p>}
           Dessert Type:
           <option>--Choose Treat--</option>
           <option>Cupcakes</option>
@@ -208,9 +216,12 @@ const GoodieForm = ({ goodie }) => {
           <option>Brownies</option>
           <option>Breakfast</option>
         </select>
+        {errors.treatType && <p className="form-error">{errors.treatType}</p>}
 
-        <label>Flavor</label>
+        <label htmlFor="flavor">Flavor</label>
         <select
+          id="flavor"
+          name="flavor"
           value={formData.flavor}
           required
           onChange={(e) => setFormData({ ...formData, flavor: e.target.value })}
@@ -223,16 +234,18 @@ const GoodieForm = ({ goodie }) => {
           <option>Lemon</option>
           <option>Carrot</option>
         </select>
+        {errors.frosting && <p className="form-error">{errors.frosting}</p>}
 
-        <label>Frosting Choice</label>
+        <label htmlFor="frosting">Frosting Choice</label>
         <select
+          id="frosting"
+          name="frosting"
           value={formData.frosting}
           required
           onChange={(e) =>
             setFormData({ ...formData, frosting: e.target.value })
           }
         >
-          {errors.frosting && <p className="form-error">{errors.frosting}</p>}
           Frosting:
           <option>--Choose Frosting--</option>
           <option>Vanilla Buttercream</option>
@@ -241,10 +254,13 @@ const GoodieForm = ({ goodie }) => {
           <option>Lemon Glaze</option>
           <option>Strawberry Frosting</option>
         </select>
+        {errors.frosting && <p className="form-error">{errors.frosting}</p>}
 
-        <label>Quantity Needed</label>
+        <label htmlFor="quantity">Quantity Needed</label>
         <div className="quantity">
           <input
+            id="quantity"
+            name="quantity"
             type="number"
             min="1"
             max="24"
@@ -258,10 +274,12 @@ const GoodieForm = ({ goodie }) => {
           {errors.quantity && <p className="form-error">{errors.quantity}</p>}
         </div>
 
-        <label>Preferred Pickup Date</label>
+        <label htmlFor="date">Preferred Pickup Date</label>
         <input
           type="date"
           required
+          id="date"
+          name="date"
           min={today}
           value={formData.pickupDate}
           onChange={(e) =>
@@ -293,10 +311,11 @@ const GoodieForm = ({ goodie }) => {
         <Button
           onClick={handleSubmit}
           type="submit"
+          disable={isSubmitting}
           text={isSubmitting ? "Submitting..." : "Submit Order Request"}
         />
       </section>
-    </div>
+    </form>
   );
 };
 

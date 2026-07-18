@@ -61,7 +61,7 @@ let goodies = [
     description: "Classic chocolate chip cookies freshly baked by the dozen",
     category: "Cookie",
     available: true,
-    image: "../IMAGES/ChocolateChipCookies.webp",
+    image: "/Logo.png",
   },
   {
     id: 7,
