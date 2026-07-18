@@ -32,7 +32,7 @@ let goodies = [
     description: "Rich and fudgy brownies perfect for parties and gatherings",
     category: "Brownie",
     available: true,
-    image: "/",
+    image: "/Logo.png",
   },
   {
     id: 4,

@@ -4,38 +4,38 @@ import Button from "./Button";
 import "../Styles/OrderGoodies.css";
 
 function GoodieCard({ onOrder, goodie }) {
-  const { id, name, price, description, category, available, image } = goodie;
+  const { name, price, description, category, available, image } = goodie;
   return (
-    <div>
-      <div className="goodie-card" style={cardStyles.GoodieCard}>
-        <img
-          src={image || "/Logo.png"}
-          alt={name || "Bakery Goodie"}
-          style={cardStyles.image}
-        />
-        <div style={{ padding: "0.5rem" }}>
+    <div className="goodie-card" style={cardStyles.GoodieCard}>
+      <img
+        src={image || "/Logo.png"}
+        alt={name || "Bakery Goodie"}
+        style={cardStyles.image}
+      />
+      <div style={cardStyles.cardContent}>
+        <div>
           <h3>{name}</h3>
           <div style={cardStyles.rating}>⭐⭐⭐⭐⭐ Custom Favorite</div>
           <p style={cardStyles.price}>
             Price: ${(Number(price) || 0).toFixed(2)}
           </p>
           <p style={cardStyles.description}>{description}</p>
+          <p style={cardStyles.category}>
+            <span className="badge">{category}</span>
+          </p>
+          <p
+            className={available ? "available" : "unavailable"}
+            style={{
+              ...cardStyles.availability,
+              color: available ? "green" : "red",
+            }}
+          >
+            {available ? "🧁 Made Fresh" : "Sold Out"}
+          </p>
         </div>
-        <p style={cardStyles.category}>
-          <span className="badge">{category}</span>
-        </p>
-        <p
-          className={available ? "available" : "unavailable"}
-          style={{
-            ...cardStyles.availability,
-            color: available ? "green" : "red",
-          }}
-        >
-          {available ? "🧁 Made Fresh" : "Sold Out"}
-        </p>
-      </div>
 
-      <Button text="Customize & Order" onClick={() => onOrder(goodie)} />
+        <Button text="Customize & Order" onClick={() => onOrder(goodie)} />
+      </div>
     </div>
   );
 }
@@ -72,6 +72,15 @@ const cardStyles = {
     borderTopLeftRadius: "14px",
     borderTopRightRadius: "14px",
   },
+  cardContent: {
+    padding: "1rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    flexGrow: 1,
+    gap: "1rem",
+  },
+
   price: {
     fontWeight: "bold",
   },
