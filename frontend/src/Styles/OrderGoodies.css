@@ -45,10 +45,11 @@
 
 .goodie-card {
   background: white;
-  border-radius: 18px;
+  border-radius: 16px;
+  padding: 24px;
   overflow: hidden;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  box-shadow: var(--shadow);
+  transition: 0.25s;
 }
 
 .goodie-card:hover {
@@ -56,9 +57,10 @@
 }
 
 .goodie-card img {
+  height: 220px;
   width: 100%;
-  height: 240px;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 .goodie-card-content {
@@ -115,6 +117,7 @@
 
 .section-title {
   color: #6b4226;
+  margin: 60px 0;
   margin-top: 30px;
 }
 
@@ -126,14 +129,15 @@
   margin-top: 8px;
   margin-bottom: 18px;
   border-radius: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
 }
 
 .goodie-form input:focus,
 .goodie-form select:focus,
 .goodie-form textarea:focus {
   outline: none;
-  border-color: #d9a066;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(217, 160, 102, 0.25);
 }
 
 .goodie-preview {
@@ -197,6 +201,9 @@
 
   .goodie-card img {
     height: 220px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
   }
 
   .goodie-form-card {
@@ -233,6 +240,9 @@
 
   .goodie-card img {
     height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
   }
 
   .goodie-card-content {
