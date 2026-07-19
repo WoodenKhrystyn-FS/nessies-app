@@ -115,44 +115,6 @@ nav a:hover {
   padding: 2rem;
 }
 
-/* .goodie-card {
-  transition: 0.3s;
-  overflow: hidden;
-  border-radius: 14px;
-}
-
-.goodie-card:hover,
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-.goodie-form {
-  max-width: 700px;
-  margin: 50px auto;
-  padding: 2rem;
-  background-color: #fff8f2;
-  border-radius: 18px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.goodie-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.goodie-form input,
-.goodie-form select,
-.goodie-form textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 16px;
-} */
-
 .goodie-preview {
   display: flex;
   flex-direction: column;
