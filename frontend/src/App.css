@@ -50,6 +50,10 @@
   gap: 20px;
 }
 
+.navbar a.active {
+  color: orange;
+}
+
 .Gallery-image {
   width: 220px;
   height: 220px;

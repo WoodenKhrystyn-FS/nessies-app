@@ -104,7 +104,7 @@ function OrderGoodies() {
       </header>
 
       <section className="order-page">
-        <h1>Browse our Bakery Favorites</h1>
+        <h2>Browse our Bakery Favorites</h2>
 
         <p>Choose one of our featured desserts to begin custom order.</p>
         <div className="category-filters" style={gridStyles.filters}>
@@ -123,7 +123,7 @@ function OrderGoodies() {
               style={{
                 ...gridStyles.filterButton,
                 backgroundColor:
-                  selectedCategory === category ? "#d9a066" : "#fff",
+                  selectedCategory === category ? "#8b5e34" : "#fff",
                 color: selectedCategory === category ? "#fff" : "#333",
               }}
             >

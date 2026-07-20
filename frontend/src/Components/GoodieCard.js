@@ -100,7 +100,7 @@ const cardStyles = {
     color: "green",
   },
   rating: {
-    color: "#D9A066",
+    color: "#8b5e34",
     fontWeight: "600",
     marginBottom: "10px",
   },
@@ -113,5 +113,8 @@ const cardStyles = {
     fontSize: "0.8rem",
     fontWeight: "600",
     marginTop: "10px",
+  },
+  p: {
+    color: "#444",
   },
 };

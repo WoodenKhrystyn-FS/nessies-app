@@ -76,6 +76,7 @@ const navbarStyles = {
     alignItems: "center",
     justifyContent: "space-between",
   },
+
   links: {
     listStyleType: "none",
     margin: 5,
