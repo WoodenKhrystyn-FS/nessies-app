@@ -36,7 +36,7 @@ function OrderGoodies() {
 
   if (loading) {
     return (
-      <div className="loading-state">
+      <div className="loading-state" role="status" aria-live="polite">
         <h2>🍰 Fresh treats are coming out of the oven...</h2>
         <p>Loading today's available bakery favorites.</p>
       </div>
@@ -45,7 +45,7 @@ function OrderGoodies() {
 
   if (error) {
     return (
-      <div className="error-state">
+      <div className="error-state" role="error">
         <h2>Oops!</h2>
 
         <p>{error}</p>
@@ -89,7 +89,7 @@ function OrderGoodies() {
           content="Order freshly baked goodies from Three Little Ladies Bakery, including cupcakes, cookies, and cakes."
         />
       </SEO>
-      <div className="order-header">
+      <header className="order-header">
         <h1>Freshly Baked Just for You!</h1>
 
         <p>
@@ -101,7 +101,7 @@ function OrderGoodies() {
         <p className="order-subtitle">
           Select a bakery item below to begin your custom order requests
         </p>
-      </div>
+      </header>
 
       <section className="order-page">
         <h1>Browse our Bakery Favorites</h1>
@@ -132,7 +132,7 @@ function OrderGoodies() {
           ))}
         </div>
 
-        <div className="goodie-grid" style={gridStyles.goodieGrid}>
+        <section className="goodie-grid" style={gridStyles.goodieGrid}>
           {filteredGoodies.map((goodie) => (
             <GoodieCard
               key={goodie.id}
@@ -148,8 +148,8 @@ function OrderGoodies() {
               }}
             />
           ))}
-        </div>
-        <div
+        </section>
+        <section
           ref={formRef}
           className={selectedGoodie ? "form-visible" : "form-hidden"}
         >
@@ -160,7 +160,7 @@ function OrderGoodies() {
               <GoodieForm goodie={selectedGoodie} />
             </>
           )}
-        </div>
+        </section>
       </section>
     </div>
   );

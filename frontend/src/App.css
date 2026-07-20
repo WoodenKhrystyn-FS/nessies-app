@@ -221,6 +221,36 @@ textarea {
   }
 }
 
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+a:focus {
+  outline: 3px solid #d9a066;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 20px;
+
+  top: 20px;
+
+  background: #111827;
+
+  color: white;
+
+  padding: 12px;
+
+  z-index: 999;
+}
+
+/*Root Styling*/
+
 :root {
   --primary: #d9a066;
   --primary-dark: #b57f42;

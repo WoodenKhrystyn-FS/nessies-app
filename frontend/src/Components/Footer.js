@@ -3,7 +3,7 @@ import businessInfo from "../utils/businessInfo";
 
 function Footer() {
   return (
-    <footer style={styles.footer} className="footer">
+    <footer style={styles.footer} className="footer" aria-label="Site Footer">
       <h3>{businessInfo.name}</h3>
       <p>
         Three Little Ladies Bakery 📍 {businessInfo.serviceArea} 📧{" "}

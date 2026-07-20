@@ -9,7 +9,7 @@ function GoodieCard({ onOrder, goodie }) {
     <div className="goodie-card" style={cardStyles.GoodieCard}>
       <img
         src={image || "/Logo.png"}
-        alt={name || "Bakery Goodie"}
+        alt={`${name} from Three Little Ladies Bakery`}
         style={cardStyles.image}
       />
       <div style={cardStyles.cardContent}>
@@ -34,7 +34,11 @@ function GoodieCard({ onOrder, goodie }) {
           </p>
         </div>
 
-        <Button text="Customize & Order" onClick={() => onOrder(goodie)} />
+        <Button
+          text="Customize & Order"
+          aria-label={`Customize and order ${name}`}
+          onClick={() => onOrder(goodie)}
+        />
       </div>
     </div>
   );

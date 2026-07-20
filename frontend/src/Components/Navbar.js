@@ -5,7 +5,11 @@ import Logo from "../IMAGES/Logo.png";
 
 function Navbar() {
   return (
-    <div className="navbar" style={navbarStyles.navbar}>
+    <div
+      className="navbar"
+      style={navbarStyles.navbar}
+      aria-label="Main Navigation"
+    >
       <img
         className="Logo"
         src={Logo}

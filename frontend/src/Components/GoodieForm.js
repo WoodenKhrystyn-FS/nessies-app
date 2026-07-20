@@ -127,6 +127,7 @@ const GoodieForm = ({ goodie }) => {
           id="customerName"
           name="customerName"
           required
+          aria-required="true"
           value={formData.customerName}
           onChange={(e) =>
             setFormData({ ...formData, customerName: e.target.value })
@@ -143,6 +144,7 @@ const GoodieForm = ({ goodie }) => {
           id="customerEmail"
           name="customerEmail"
           required
+          aria-required="true"
           placeholder="name@email.com"
           value={formData.customerEmail}
           onChange={(e) =>
@@ -160,6 +162,7 @@ const GoodieForm = ({ goodie }) => {
         <input
           type="tel"
           required
+          aria-required="true"
           id="customerPhone"
           name="customerPhone"
           pattern="[0-9]{10}"

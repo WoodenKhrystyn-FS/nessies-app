@@ -17,9 +17,12 @@ function App() {
       <header style={appStyles.Header}>Three Little Ladies Bakery</header>
 
       <StructuredData />
+      <a href="#main-content" className="skip-link">
+        Skip to Main Content
+      </a>
       <Navbar />
 
-      <main style={appStyles.main}>
+      <main style={appStyles.main} id="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
