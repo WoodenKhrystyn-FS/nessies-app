@@ -45,7 +45,7 @@ function OrderGoodies() {
 
   if (error) {
     return (
-      <div className="error-state" role="error">
+      <div className="error-state">
         <h2>Oops!</h2>
 
         <p>{error}</p>

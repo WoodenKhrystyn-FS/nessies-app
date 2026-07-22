@@ -1,5 +1,5 @@
 import React from "react";
-import API_BASE_URL from "./utils/api";
+//import API_BASE_URL from "./utils/api";
 import Navbar from "./Components/Navbar";
 import StructuredData from "./Components/StructuredData";
 import Home from "./Pages/Home";

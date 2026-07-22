@@ -34,11 +34,12 @@ function Home() {
         </h1>
 
         <p style={homeStyles.tagline}>
-          Freshly baked goods made with love and passion. From our oven to your
-          table!
+          Freshly baked goods made with love and passion made from scratch for
+          birthsays, weddings, showers, graduation and every special occasion.
         </p>
-        <p style={homeStyles.tagline}>
-          Homemade treats for every occasion, including custom orders.
+        <p style={homeStyles.subTagline}>
+          Proudly serving Central Indiana with handmade desserts made with
+          quality ingredients and homemade recipes.
         </p>
 
         <button
@@ -64,20 +65,72 @@ function Home() {
         </p>
       </section>
 
+      <section style={homeStyles.whySection}>
+        <h2>Why Choose Three Little Ladies Bakery</h2>
+        <div style={homeStyles.whyGrid}>
+          <div style={homeStyles.whyCard}>
+            🧁
+            <h3>Fresh Ingredients</h3>
+            <p>
+              Every dessert is baked using quality ingredients for homemade
+              flavor.
+            </p>
+          </div>
+
+          <div style={homeStyles.whyCard}>
+            🎂
+            <h3>Custom Orders</h3>
+            <p>Personalized desserts designed for every celebration.</p>
+          </div>
+          <div style={homeStyles.whyCard}>
+            ❤️
+            <h3>Made with Love</h3>
+            <p>Every order is handcrafted with care and attention to detail.</p>
+          </div>
+          <div style={homeStyles.whyCard}>
+            📍
+            <h3>Serving Central Indiana</h3>
+            <p>Proudly serving families throughout Central Indiana</p>
+          </div>
+        </div>
+        <div></div>
+      </section>
+
       <section className="products-section" style={homeStyles.productsSection}>
         <h2>Customer Faves</h2>
         <div style={homeStyles.productsGrid}>
           <div style={homeStyles.productCard}>
-            <h3>Chocolate Chip Cookies</h3>
+            <img
+              src="/IMAGES/ChocolateChipCookies.webp"
+              alt="Chocolate Chip Cookies"
+              style={homeStyles.productImage}
+            />
+            <h3>Chocolate Chip Cookie Dozen</h3>
+
             <p>Classic cookies with gooey chocolate chips.</p>
+
+            <strong>Starting at $18</strong>
           </div>
+
           <div style={homeStyles.productCard}>
-            <h3>Red Velvet Cupcakes</h3>
+            <img
+              src="/IMAGES/RedVelvetCupcakes.jpeg"
+              alt="Red Velvet cupcakes"
+              style={homeStyles.productImage}
+            />
+            <h3>Customized Red Velvet Cupcakes Dozen</h3>
             <p>Moist red velvet cupcakes with cream cheese frosting.</p>
+            <strong>Starting at $32</strong>
           </div>
           <div style={homeStyles.productCard}>
-            <h3>Lemon Bars</h3>
-            <p>Tangy lemon bars with a buttery crust.</p>
+            <img
+              src="/IMAGES/brownies.jpeg"
+              alt="Fudge Brownies"
+              style={homeStyles.productImage}
+            />
+            <h3>Custom Fudge Brownie Tray</h3>
+            <p>Rich and fudgy brownies perfect for parties and gatherings</p>
+            <strong>Starting at $24</strong>
           </div>
         </div>
       </section>
@@ -87,11 +140,49 @@ function Home() {
         <Gallery />
       </section>
 
+      <section style={homeStyles.testimonalSection}>
+        <h2>What Our Customers Are Saying</h2>
+
+        <div style={homeStyles.testimonalGrid}>
+          <div style={homeStyles.testimonalCard}>
+            ⭐⭐⭐⭐⭐
+            <p>
+              "The birthday cake exceeded our expectations! Beautiful and
+              delicious."
+            </p>
+            <strong>Jane D.</strong>
+          </div>
+        </div>
+        <br />
+        <div style={homeStyles.testimonalGrid}>
+          <div style={homeStyles.testimonalCard}>
+            ⭐⭐⭐⭐⭐
+            <p>
+              "The cookies disappeared within minutes! Another order will made
+              soon."
+            </p>
+            <strong>James D.</strong>
+          </div>
+        </div>
+        <br />
+        <div style={homeStyles.testimonalGrid}>
+          <div style={homeStyles.testimonalCard}>
+            ⭐⭐⭐⭐⭐
+            <p>
+              "Our wedding cupcakes were phenomenal. Most talked about dessert
+              all night!"
+            </p>
+            <strong>Khrystyn W.</strong>
+          </div>
+        </div>
+      </section>
+
       <section className="cta-section" style={homeStyles.ctaSection}>
-        <h2>Have a Custom Order?</h2>
+        <h2>Ready to Make Your Celebration Extra Special?</h2>
         <p>
-          Need cookies, cupcakes, cakes, or treats for your next event? We'd
-          love to hear from you!
+          Whether its celebrating a birthday, wedding, gradution or you just
+          have a seet tooth, we want to hear from you and bake something
+          special.
         </p>
         <button
           style={homeStyles.ctaButton}
@@ -194,5 +285,39 @@ const homeStyles = {
     margin: "0 auto",
     marginTop: "3rem",
     marginBottom: "3rem",
+  },
+
+  subTagline: {
+    fontSize: "1.25rem",
+    marginBottom: "2rem",
+    color: "#6b72bb",
+  },
+
+  productImage: {
+    width: "100%",
+    height: "220px",
+    objectFit: "cover",
+    borderRadius: "12px",
+    marginBottom: "15px",
+  },
+
+  whySection: {
+    padding: "5rem 2rem",
+    background: "#ffffff",
+    textAlign: "center",
+  },
+
+  whyGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
+    gap: "25px",
+    marginTop: "40px",
+  },
+
+  whyCard: {
+    background: "#fff8f2",
+    padding: "30px",
+    borderRadius: "15px",
+    boxShadow: "0 5px 15px rgba(0,0,0,.08)",
   },
 };
