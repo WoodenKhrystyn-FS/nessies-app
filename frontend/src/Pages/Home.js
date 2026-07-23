@@ -100,11 +100,11 @@ function Home() {
         <h2>Customer Faves</h2>
         <div style={homeStyles.productsGrid}>
           <div style={homeStyles.productCard}>
-            <img
+            {/* <img
               src="/IMAGES/ChocolateChipCookies.webp"
               alt="Chocolate Chip Cookies"
               style={homeStyles.productImage}
-            />
+            /> */}
             <h3>Chocolate Chip Cookie Dozen</h3>
 
             <p>Classic cookies with gooey chocolate chips.</p>
@@ -113,21 +113,21 @@ function Home() {
           </div>
 
           <div style={homeStyles.productCard}>
-            <img
-              src="/IMAGES/RedVelvetCupcakes.jpeg"
+            {/* <img
+              src="/IMAGES/RedVelvetCupcakes.webp"
               alt="Red Velvet cupcakes"
               style={homeStyles.productImage}
-            />
+            /> */}
             <h3>Customized Red Velvet Cupcakes Dozen</h3>
             <p>Moist red velvet cupcakes with cream cheese frosting.</p>
             <strong>Starting at $32</strong>
           </div>
           <div style={homeStyles.productCard}>
-            <img
-              src="/IMAGES/brownies.jpeg"
+            {/* <img
+              src="/IMAGES/brownies.webp"
               alt="Fudge Brownies"
               style={homeStyles.productImage}
-            />
+            /> */}
             <h3>Custom Fudge Brownie Tray</h3>
             <p>Rich and fudgy brownies perfect for parties and gatherings</p>
             <strong>Starting at $24</strong>

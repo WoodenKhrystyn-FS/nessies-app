@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 //import { Helmet } from "react-helmet-async";
 import SEO from "../Components/SEO";
-import owner from "../IMAGES/tllb_owner.jpeg";
+import owner from "../IMAGES/tllb_owner.jpg";
 import Button from "../Components/Button";
 
 function About() {
