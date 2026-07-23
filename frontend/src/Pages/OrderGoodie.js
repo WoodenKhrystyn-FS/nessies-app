@@ -106,6 +106,25 @@ function OrderGoodies() {
       <section className="order-page">
         <h2>Browse our Bakery Favorites</h2>
 
+        <h3>How Does Ordering Work?</h3>
+        <ul>
+          <li>1. Look through the available bakery items</li>
+          <li>2. Select "Customize & Order</li>
+          <li>3. Complete the custom order request form</li>
+          <li>
+            4. TLLB will contact you withing 24-48 hours to confirm order
+            details, pricing and pickup date
+          </li>
+        </ul>
+        <br />
+        <h3>Custom Order Info</h3>
+        <ul>
+          <li>* Required Minimum 72- hour notice for custom cakes</li>
+          <li>* Pickup ONLY</li>
+          <li>* Pricing varies based on size and customization</li>
+          <li>* Holiday availability may be limited</li>
+        </ul>
+
         <p>Choose one of our featured desserts to begin custom order.</p>
         <div className="category-filters" style={gridStyles.filters}>
           {[
