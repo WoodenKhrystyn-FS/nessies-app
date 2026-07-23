@@ -95,10 +95,40 @@ function Contact() {
       <h1>Contact Us</h1>
 
       <p>
-        Planning a wedding, birthday, or special event? We would love to hear
-        from you! Please fill out the form below and we will get back to you as
-        soon as possible.
+        We'd love to help make your next celebration extra special. Whether
+        you're planning a birthday, wedding, baby shower, graduation, office
+        party, or simply craving homemade desserts, we're here to answer your
+        questions and discuss custom orders. Complete the contact form below,
+        and we'll respond within 24-48 hours.
       </p>
+
+      <h1>Service Area</h1>
+      <h2>Serving Central Indiana</h2>
+      <p>
+        <strong>Three Little Ladies Bakery</strong> proudly serves customers
+        throughout Central Indiana, including Indianapolis and surrounding
+        communities.
+      </p>
+      <p>Custome pickup arrangements are available upon request</p>
+
+      <h1>FAQs</h1>
+      <h3>Frequently Asked Questions</h3>
+
+      <p>
+        <strong>How far in advance should I place my order?</strong> We
+        recommend placing custom cake orders at least 72 hours in advance.
+      </p>
+      <p>
+        <strong>Do you offer custom designs? </strong> Yes! We love creating
+        personalized desserts for birthdays, weddings, showers, graduations, and
+        more.
+      </p>
+      <p>
+        <strong>Do you offer seasonal desserts?</strong>
+        Absolutely! Holiday-themed treats and seasonal specialties are available
+        throughout the year.
+      </p>
+
       <div className="contact-content">
         <div className="contact-form-card">
           <div className="contact-details">
