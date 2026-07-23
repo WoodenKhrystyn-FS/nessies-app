@@ -33,24 +33,59 @@ function About() {
         <meta property="og:site_name" content="Three Little Ladies Bakery" />
       </SEO>
 
+      <h1>Welcome!</h1>
+
       <p>
-        First, lets introduce the owner of Three Little Ladies Bakery, Lillian
-        V. Tender. Starting out in her kitchen she created the most delight
-        baked goodies with much love and perfection. Her passion for baking and
-        making people happy with her treats drove her to open Three Little
-        Ladies Bakery in 2024 - named from her "three little nieces" who
-        inspired her. Since then, Three Little Ladies Bakery has been a staple
-        in the local community, known for its delicious cupcakes, cookies,
-        cakes, and more.
+        At Three Little Ladies Bakery, every dessert is made with care,
+        creativity and passion for bringing people together. While this website
+        was developed for a capstone project, it represents the vision of a
+        welcoming neighborhood bakery that specializes in handcrated desserts
+        for every celebatory event.
       </p>
+
+      <h2>Our Story</h2>
+
       <p>
-        At Three Little Ladies Bakery, we believe in using only the finest
-        ingredients to create our delectable treats. From classic flavors to
-        unique and innovative creations, our menu offers something for everyone.
-        Whether you're celebrating a special occasion or simply indulging in a
-        sweet craving, Three Little Ladies Bakery is here to satisfy your
-        dessert desires.
+        <strong>Three Little Ladies Bakery</strong> was inspired by family,
+        tradition and a love for homemade desserts. The name comes from
+        me(Khrystyn Wooden- Website Creator) and my younger sisters (Taylor and
+        Doris) whose shared love of family gatherings and sweets inspired the
+        bakery's identity. The heart behing the bakery comes from my aunt,
+        (Lillian V. Tender) who's a pssionate home baker and enjoys baking for
+        her family and friends. Whether its cupcakes, pound cakes, cookies or
+        experimenting a new recipe, she loves to bring joy to her family
+        together through her baking treats. This website was developed as a
+        capstone project to showcase her baking passion and to also imagine what{" "}
+        <strong>Three Little Ladies Bakery</strong> could potentially become as
+        a small business serving Central Indiana.
       </p>
+
+      <h2>What TLLB Offers</h2>
+
+      <p>Our specialities are:</p>
+      <ul>
+        <li>Custom cakes</li>
+        <li>Wedding Cakes</li>
+        <li>Cupcakes</li>
+        <li>Homemade Cookies</li>
+        <li>Brownies</li>
+        <li>Seasonal desserts</li>
+        <li>Special Occasion Catering</li>
+      </ul>
+
+      <h2>Why Choose TLLB</h2>
+      <strong>
+        <p>Why Choose Three Little Ladies Bakery?</p>
+      </strong>
+
+      <ul>
+        <li>Fresh Ingredients</li>
+        <li>Homemade Recipes</li>
+        <li>Personalized custom orders</li>
+        <li>Friendly customer service</li>
+        <li>Serving families throughout Central Indiana</li>
+      </ul>
+
       <p>
         Thank you for choosing Three Little Ladies Bakery, where every bite is a
         taste of happiness!
@@ -64,7 +99,7 @@ function About() {
         />
       </div>
       <br />
-      <p>Lillian V. Tender, Owner of Three Little Ladies Bakery</p>
+      <p>Lillian V. Tender, Baker/Owner of Three Little Ladies Bakery</p>
 
       <section>
         <h2>Ready to Serve You</h2>
